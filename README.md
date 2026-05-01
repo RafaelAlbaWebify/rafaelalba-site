@@ -1,12 +1,14 @@
-# Rafael Alba Website - v2 Professional
+# Rafael Alba website v4
 
-Static website version for GitHub Pages.
+Version with:
 
-Replace the existing files in the repository with:
+- Professional portrait integrated in the hero section.
+- Personal-brand style layout.
+- Articles / Lab Notes section inspired by technical blogs.
+- Responsive CSS.
 
-- `index.html`
-- `css/styles.css`
+Main files:
 
-Main contact email used in this version:
-
-- `rafael@rafaelalba.com`
+- index.html
+- css/styles.css
+- assets/rafael-alba-portrait.webp

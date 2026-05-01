@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rafael Alba | Microsoft 365 & IT Troubleshooting</title>
   <meta name="description" content="Practical Microsoft 365, access management and IT troubleshooting help for small businesses." />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <header class="site-header">
@@ -18,6 +18,7 @@
       <nav class="main-nav" aria-label="Main navigation">
         <a href="#services">Services</a>
         <a href="#process">Process</a>
+        <a href="#lab-notes">Lab Notes</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -25,8 +26,8 @@
   </header>
 
   <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
+    <section class="hero hero-personal">
+      <div class="container hero-grid hero-grid-personal">
         <div class="hero-copy">
           <p class="eyebrow">Microsoft 365 · Access issues · Practical IT support</p>
           <h1>Clear IT troubleshooting for small businesses that need answers, not noise.</h1>
@@ -35,18 +36,18 @@
           </p>
           <div class="hero-actions">
             <a class="btn primary" href="#contact">Describe your issue</a>
-            <a class="btn secondary" href="#services">View services</a>
+            <a class="btn secondary" href="#lab-notes">Read lab notes</a>
           </div>
         </div>
 
-        <aside class="hero-panel" aria-label="Key service areas">
-          <h2>Where I can help</h2>
-          <ul>
-            <li>Users unable to access email, files or systems</li>
-            <li>Microsoft 365 permissions and account issues</li>
-            <li>Messy setups with unclear ownership or configuration</li>
-            <li>Recurring incidents with no obvious root cause</li>
-          </ul>
+        <aside class="hero-profile" aria-label="Rafael Alba professional profile">
+          <div class="hero-photo-frame">
+            <img src="assets/rafael-alba-portrait.webp" alt="Professional portrait of Rafael Alba" />
+          </div>
+          <div class="hero-profile-card">
+            <p class="profile-name">Rafael Alba</p>
+            <p>Operations-minded IT support for Microsoft 365, access management and recurring technical issues.</p>
+          </div>
         </aside>
       </div>
     </section>
@@ -139,20 +140,67 @@
       </div>
     </section>
 
-    <section id="about" class="section about-section">
-      <div class="container about-wrap">
-        <div class="section-heading">
-          <p class="eyebrow">About</p>
-          <h2>Operations-minded IT support.</h2>
+    <section id="lab-notes" class="section lab-section">
+      <div class="container">
+        <div class="section-heading lab-heading">
+          <p class="eyebrow">Articles / Lab Notes</p>
+          <h2>Practical notes from real IT troubleshooting and lab work.</h2>
+          <p class="section-intro">
+            Short technical write-ups are useful because they show how problems are investigated, not just what tools are used. This section can later link to full posts, GitHub projects or YouTube videos.
+          </p>
         </div>
 
-        <div class="about-copy">
-          <p>
-            I have an IT operations background focused on troubleshooting, access management, Microsoft 365 and business-critical systems.
-          </p>
-          <p>
-            My approach is simple: understand the real problem, verify the evidence and provide clear, practical next steps. No vague advice. No unnecessary complexity.
-          </p>
+        <div class="article-grid">
+          <article class="article-card">
+            <p class="article-meta">Microsoft 365 · Access</p>
+            <h3>How I approach Microsoft 365 access problems</h3>
+            <p>A structured way to separate user, permission, group, licensing and configuration issues before changing anything.</p>
+            <a href="#contact" aria-label="Ask about Microsoft 365 access troubleshooting">Discuss an issue</a>
+          </article>
+
+          <article class="article-card">
+            <p class="article-meta">DNS · Operations</p>
+            <h3>Silent infrastructure issues that do not always trigger alerts</h3>
+            <p>Why DNS records, stale entries and missing reverse lookups can create confusing authentication and connectivity symptoms.</p>
+            <a href="#contact" aria-label="Ask about DNS and infrastructure troubleshooting">Ask for review</a>
+          </article>
+
+          <article class="article-card">
+            <p class="article-meta">Homelab · Learning</p>
+            <h3>Building a practical IT lab for real operational skills</h3>
+            <p>Notes on using virtual machines, test users, Microsoft services and small scenarios to practise troubleshooting safely.</p>
+            <a href="#contact" aria-label="Ask about practical IT lab work">Talk about this</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <div class="container about-wrap">
+        <div class="about-photo-card about-photo-small">
+          <img src="assets/rafael-alba-portrait.webp" alt="Rafael Alba, IT operations and troubleshooting" />
+        </div>
+
+        <div class="about-content">
+          <div class="section-heading">
+            <p class="eyebrow">About</p>
+            <h2>Operations-minded IT support.</h2>
+          </div>
+
+          <div class="about-copy">
+            <p>
+              I have an IT operations background focused on troubleshooting, access management, Microsoft 365 and business-critical systems.
+            </p>
+            <p>
+              My approach is simple: understand the real problem, verify the evidence and provide clear, practical next steps. No vague advice. No unnecessary complexity.
+            </p>
+          </div>
+
+          <ul class="about-points" aria-label="Rafael Alba key areas">
+            <li>Microsoft 365 and user access troubleshooting</li>
+            <li>Structured incident analysis and practical recommendations</li>
+            <li>Clear communication for small businesses and non-technical users</li>
+          </ul>
         </div>
       </div>
     </section>
