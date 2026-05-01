@@ -1,20 +1,12 @@
-# Rafael Alba - IT Support Website
+# Rafael Alba Website - v2 Professional
 
-This is my personal website focused on helping small businesses resolve Microsoft 365 and IT access issues with clear, practical solutions.
+Static website version for GitHub Pages.
 
-## Services
+Replace the existing files in the repository with:
 
-- IT troubleshooting
-- Microsoft 365 support
-- User access and permissions issues
-- System cleanup and configuration review
+- `index.html`
+- `css/styles.css`
 
-## Tech
+Main contact email used in this version:
 
-- Static HTML
-- CSS
-- GitHub Pages
-
-## Domain
-
-rafaelalba.com
+- `rafael@rafaelalba.com`
