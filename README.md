@@ -1,14 +1,23 @@
-# Rafael Alba website v4
+# Rafael Alba website v5
 
-Version with:
+Professional personal-brand version for GitHub Pages.
 
-- Professional portrait integrated in the hero section.
-- Personal-brand style layout.
-- Articles / Lab Notes section inspired by technical blogs.
-- Responsive CSS.
+## Included
 
-Main files:
+- `index.html`
+- `css/styles.css`
+- `assets/rafael-alba-portrait.webp`
+- `assets/rafael-alba-meeting.webp`
+- `lab-notes/index.html`
+- `lab-notes/microsoft-365-access-troubleshooting.html`
+- `lab-notes/dns-audit-silent-infrastructure-issues.html`
+- `lab-notes/practical-homelab-it-operations.html`
 
-- index.html
-- css/styles.css
-- assets/rafael-alba-portrait.webp
+## Notes
+
+This version includes:
+
+- corrected hero profile card
+- stronger personal-brand statement
+- separate About image
+- real clickable Lab Notes pages

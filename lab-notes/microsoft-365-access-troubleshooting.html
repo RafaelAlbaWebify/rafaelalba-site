@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Microsoft 365 access issues | Rafael Alba</title>
+  <meta name="description" content="A practical checklist for troubleshooting Microsoft 365 access issues." />
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <header class="site-header"><div class="container nav-wrap"><a class="brand" href="../index.html"><span class="brand-name">Rafael Alba</span><span class="brand-line">IT Operations & Troubleshooting</span></a><nav class="main-nav"><a href="../index.html#services">Services</a><a href="../index.html#process">Process</a><a href="index.html">Lab Notes</a><a href="../index.html#about">About</a><a href="../index.html#contact">Contact</a></nav></div></header>
+  <main>
+    <section class="article-hero"><div class="container"><p class="eyebrow">Microsoft 365 · Access</p><h1>Microsoft 365 access issues: a practical troubleshooting checklist</h1><p>Access problems are rarely solved by guessing. A structured checklist helps separate user, permission, licensing and configuration problems before making changes.</p></div></section>
+    <section class="article-layout"><article class="article-body"><a class="back-link" href="index.html">Back to Lab Notes</a>
+      <h2>Start with the symptom, not the assumption</h2>
+      <p>When a user cannot access email, SharePoint, OneDrive or a business application, the first mistake is to jump directly into changing permissions. The better approach is to define the exact symptom: what fails, where it fails, who is affected, when it started and whether the failure is consistent.</p>
+      <div class="article-callout"><p><strong>Useful first question:</strong> is this a single-user issue, a group issue, a location/device issue, or a service-wide issue?</p></div>
+      <h2>Check the identity basics</h2>
+      <ul><li>Confirm the user account is active and not blocked.</li><li>Check whether password reset, MFA registration or conditional access is involved.</li><li>Validate the user is signing in with the expected account and tenant.</li><li>Look for recent changes to the user, group membership or role assignment.</li></ul>
+      <h2>Separate license from permission</h2>
+      <p>A user may authenticate correctly but still be unable to use a service if the right license is missing. Equally, the license may be correct but the resource permission may be wrong. Treat those as two separate checks.</p>
+      <h2>Review groups and inheritance</h2>
+      <p>Many access issues come from nested groups, old security groups, broken ownership or assumptions about inheritance. For shared resources, verify the actual effective permission, not only the intended permission.</p>
+      <h2>Document the fix</h2>
+      <p>The final step is to record what changed and why. That is what turns a one-off fix into operational knowledge and reduces repeat incidents.</p>
+    </article></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-wrap"><p>© 2026 Rafael Alba</p><a href="mailto:rafael@rafaelalba.com">rafael@rafaelalba.com</a></div></footer>
+</body>
+</html>
