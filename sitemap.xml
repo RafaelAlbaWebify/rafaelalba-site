@@ -13,11 +13,19 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rafaelalba.com/lab-notes/dns-audit-silent-infrastructure-issues.html</loc>
+    <loc>https://rafaelalba.com/lab-notes/dns-problems-that-look-like-microsoft-365-issues.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://rafaelalba.com/lab-notes/practical-homelab-it-operations.html</loc>
+    <loc>https://rafaelalba.com/lab-notes/why-troubleshooting-fails-without-proper-documentation.html</loc>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rafaelalba.com/lab-notes/dns-audit-silent-infrastructure-issues.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rafaelalba.com/lab-notes/practical-homelab-it-operations.html</loc>
+    <priority>0.6</priority>
   </url>
 </urlset>
