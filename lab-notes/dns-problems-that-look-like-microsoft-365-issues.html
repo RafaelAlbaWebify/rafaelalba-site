@@ -11,7 +11,7 @@
     content="How DNS issues can silently break Microsoft 365 authentication, Teams, Outlook and cloud access even when everything appears operational."
   />
 
-  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/styles.css?v=20260515-lightbox-final" />
 
   <link
     rel="canonical"
@@ -60,9 +60,9 @@
     <article class="article-body">
       <a class="back-link" href="index.html">Back to Lab Notes</a>
 
-      <figure class="article-visual">
+      <figure class="article-visual" id="dns-infographic-preview">
         <a href="#dns-infographic" class="visual-link">
-          <img src="../images/dns-problems-microsoft-365-infographic.png.png" alt="DNS problems that look like Microsoft 365 issues infographic">
+          <img src="../images/dns-problems-microsoft-365-infographic.png" alt="DNS problems that look like Microsoft 365 issues infographic">
           <span class="visual-expand">Click to enlarge</span>
         </a>
         <figcaption>
@@ -71,8 +71,8 @@
       </figure>
 
       <div id="dns-infographic" class="lightbox">
-        <a href="#" class="lightbox-close" aria-label="Close enlarged image">×</a>
-        <img src="../images/dns-problems-microsoft-365-infographic.png.png" alt="DNS problems that look like Microsoft 365 issues enlarged">
+        <a href="#dns-infographic-preview" class="lightbox-close" aria-label="Close enlarged image">×</a>
+        <img src="../images/dns-problems-microsoft-365-infographic.png" alt="DNS problems that look like Microsoft 365 issues enlarged">
       </div>
 
       <h2>When cloud services fail but nothing looks broken</h2>

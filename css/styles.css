@@ -300,11 +300,12 @@ h1 {
 .lightbox {
   position: fixed;
   inset: 0;
-  z-index: 999;
+  z-index: 9999;
   display: none;
   align-items: center;
   justify-content: center;
   padding: 28px;
+  overflow: auto;
   background: rgba(17, 20, 24, 0.92);
 }
 
@@ -313,6 +314,7 @@ h1 {
 }
 
 .lightbox img {
+  width: auto;
   max-width: 96vw;
   max-height: 90vh;
   border-radius: 16px;
@@ -323,6 +325,7 @@ h1 {
   position: fixed;
   top: 18px;
   right: 24px;
+  z-index: 10000;
   color: #fff;
   font-size: 2.4rem;
   line-height: 1;
