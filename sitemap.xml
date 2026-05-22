@@ -2,30 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rafaelalba.com/</loc>
+    <lastmod>2026-05-22</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://rafaelalba.com/lab-notes/</loc>
+    <lastmod>2026-05-22</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rafaelalba.com/lab-notes/microsoft-365-access-troubleshooting.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rafaelalba.com/lab-notes/dns-problems-that-look-like-microsoft-365-issues.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rafaelalba.com/lab-notes/why-troubleshooting-fails-without-proper-documentation.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rafaelalba.com/lab-notes/dns-audit-silent-infrastructure-issues.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://rafaelalba.com/lab-notes/practical-homelab-it-operations.html</loc>
+    <lastmod>2026-05-22</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>
