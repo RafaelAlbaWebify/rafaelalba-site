@@ -129,7 +129,7 @@ const SERVICES = [
     icon: Wrench,
     title: "Microsoft 365 & Entra ID Support",
     description:
-      "Users can't access mailboxes, Teams, SharePoint or OneDrive. Login loops, conditional access blocks, sync failures affecting the whole floor. I investigate the evidence, identify the root cause and hand over clear next steps.",
+      "Users can't access mailboxes, Teams, SharePoint or OneDrive. Login loops, conditional access blocks, sync failures affecting the whole floor. I investigate the evidence, narrow down the likely cause and hand over clear next steps.",
   },
   {
     icon: Server,
