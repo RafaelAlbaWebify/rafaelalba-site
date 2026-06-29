@@ -261,10 +261,13 @@ export default function Home() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const contactEmail = "rafael@rafaelalba.com";
+  const web3FormsAccessKey = "e0917076-7178-47eb-8861-c175d4682381";
+  const web3FormsEndpoint = "https://api.web3forms.com/submit";
   const [formState, setFormState] = useState({ name: "", email: "", message: "" });
   const [formErrors, setFormErrors] = useState<{ name?: string; email?: string; message?: string }>({});
   const [formFeedback, setFormFeedback] = useState("");
   const [preparedMailtoLink, setPreparedMailtoLink] = useState("");
+  const [formSubmitting, setFormSubmitting] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -339,22 +342,70 @@ export default function Home() {
     );
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!validateContactForm()) {
-      setFormFeedback("Please correct the highlighted fields before opening the email draft.");
+    if (formSubmitting) {
       return;
     }
 
+    if (!validateContactForm()) {
+      setFormFeedback("Please correct the highlighted fields before sending.");
+      return;
+    }
+
+    const name = formState.name.trim();
+    const email = formState.email.trim();
+    const message = formState.message.trim();
     const mailtoLink = buildMailtoLink();
+
     setPreparedMailtoLink(mailtoLink);
+    setFormSubmitting(true);
+    setFormFeedback("Sending your message...");
 
-    setFormFeedback(
-      "Your email draft should open. If it does not include the details, use the prepared email link below."
-    );
+    try {
+      const response = await fetch(web3FormsEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: web3FormsAccessKey,
+          subject: "Website contact request - rafaelalba.com",
+          from_name: "rafaelalba.com contact form",
+          name,
+          email,
+          replyto: email,
+          message,
+          botcheck: "",
+        }),
+      });
 
-    window.location.href = mailtoLink;
+      let result: { success?: boolean; message?: string } = {};
+
+      try {
+        result = await response.json();
+      } catch {
+        result = {};
+      }
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "The form provider rejected the submission.");
+      }
+
+      setFormState({ name: "", email: "", message: "" });
+      setFormErrors({});
+      setPreparedMailtoLink("");
+      setFormFeedback("Message sent. Thank you - I will reply as soon as possible.");
+    } catch (error) {
+      console.error("Contact form submission failed:", error);
+      setFormFeedback(
+        "The direct form submission did not work this time. Please use the email draft fallback below or email me directly."
+      );
+    } finally {
+      setFormSubmitting(false);
+    }
   };
 
   return (
@@ -915,10 +966,11 @@ export default function Home() {
                   <div className="space-y-4">
                     <button
                       type="submit"
-                      className="btn-primary btn-press flex items-center gap-2"
+                      disabled={formSubmitting}
+                      className="btn-primary btn-press flex items-center gap-2 disabled:cursor-not-allowed disabled:opacity-60"
                     >
                       <Send size={14} />
-                      Email me
+                      {formSubmitting ? "Sending..." : "Send message"}
                     </button>
 
                     <AnimatePresence>
@@ -937,7 +989,7 @@ export default function Home() {
                               href={preparedMailtoLink}
                               className="inline-flex text-sm font-semibold text-white hover:text-white/80 underline underline-offset-4 transition-colors"
                             >
-                              Open the prepared email again
+                              Open email draft fallback
                             </a>
                           )}
                         </motion.div>
@@ -945,7 +997,7 @@ export default function Home() {
                     </AnimatePresence>
 
                     <p className="text-white/40 text-sm leading-relaxed">
-                      If the email draft does not open, contact me directly at{" "}
+                      If the form does not work, you can email me directly at{" "}
                       <a
                         href={"mailto:" + contactEmail}
                         className="text-white/70 hover:text-white transition-colors"
