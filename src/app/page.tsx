@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef, FormEvent } from "react";
 import { motion, useInView, AnimatePresence, type Variants } from "framer-motion";
-import Image from "next/image";
 import {
   Mail,
   Github,
@@ -21,7 +20,7 @@ import {
   Send,
 } from "lucide-react";
 
-/* ═══════════════════ ANIMATION HELPERS ═══════════════════ */
+/* --- ANIMATION HELPERS --- */
 
 const EASE_OUT: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -87,7 +86,7 @@ const staggerItem: Variants = {
   },
 };
 
-/* ═══════════════════ HERO WORD ANIMATION ═══════════════════ */
+/* --- HERO WORD ANIMATION --- */
 
 function HeroAnimatedLine({ text, delay = 0 }: { text: string; delay?: number }) {
   const words = text.split(" ");
@@ -113,7 +112,7 @@ function HeroAnimatedLine({ text, delay = 0 }: { text: string; delay?: number })
   );
 }
 
-/* ═══════════════════ DATA ═══════════════════ */
+/* --- DATA --- */
 
 const NAV_LINKS = [
   { label: "Services", href: "#services" },
@@ -360,7 +359,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* ═══════════ HEADER ═══════════ */}
+      {/* HEADER */}
       <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
         <motion.nav
           initial={{ y: -80, opacity: 0 }}
@@ -368,16 +367,22 @@ export default function Home() {
           transition={{ duration: 0.8, ease: EASE_OUT }}
           className={`transition-all duration-500 ${
             scrolled
-              ? "bg-navy/95 backdrop-blur-md shadow-lg shadow-navy/20"
-              : "bg-transparent"
+                ? "bg-white/92 backdrop-blur-md shadow-lg shadow-black/5"
+                : "bg-transparent"
           }`}
         >
-          <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-16">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-20">
             <button
               onClick={() => scrollTo("#hero")}
-              className="text-white font-serif text-xl font-semibold tracking-wide hover:opacity-80 transition-opacity"
+              className="group inline-flex items-center hover:opacity-85 transition-opacity"
+              aria-label="Rafael Alba - Operations Engineer"
             >
-              Rafael Alba
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/rafael-logo.svg"
+                alt="Rafael Alba - Operations Engineer"
+                className="block h-auto w-[12.75rem] sm:w-[15.25rem]"
+              />
             </button>
 
             {/* Desktop Nav */}
@@ -392,17 +397,17 @@ export default function Home() {
                 </button>
               ))}
               <button
-                onClick={() => scrollTo("#contact")}
-                className="ml-4 text-xs font-semibold tracking-widest uppercase px-5 py-2.5 border border-white/30 text-white hover:bg-white hover:text-navy transition-all duration-300 btn-press"
-              >
-                Talk to me
-              </button>
+  onClick={() => scrollTo("#contact")}
+  className="ml-4 inline-flex h-12 min-w-[10rem] items-center justify-center whitespace-nowrap bg-charcoal px-5 text-xs font-bold uppercase tracking-[0.12em] text-white hover:bg-black transition-all duration-300 btn-press"
+>
+  Get Help Today
+</button>
             </div>
 
             {/* Mobile Toggle */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden text-white p-1"
+              className="lg:hidden text-charcoal p-1"
               aria-label="Toggle menu"
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -441,48 +446,46 @@ export default function Home() {
       </header>
 
       <main className="flex-1">
-        {/* ═══════════ HERO ═══════════ */}
-        <section
-          id="hero"
-          className="relative min-h-screen flex items-end sm:items-center overflow-hidden"
-        >
+        {/* HERO */}
+        <section id="hero" className="hero-section">
           {/* Full-bleed hero background image with Ken Burns */}
           <div className="absolute inset-0">
-            <Image
-              src="/images/rafael-standing.webp"
-              alt=""
-              fill
-              className="hero-kenburns object-cover object-center"
-              priority
-              quality={95}
-              sizes="100vw"
-            />
-            {/* Dark gradient overlay — left-to-right + bottom for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/78 via-black/42 to-black/5" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
+<picture className="hero-picture">
+  <source media="(max-width: 767px)" srcSet="/images/hero-mobile-tall.png" />
+  {/* eslint-disable-next-line @next/next/no-img-element */}
+  <img
+    src="/images/hero-desktop-wide.png"
+    alt=""
+    className="hero-image"
+    fetchPriority="high"
+  />
+</picture>
           </div>
 
-          {/* Hero content — Cody-style minimal */}
-          <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pb-20 sm:pb-0 w-full pt-28 sm:pt-0">
-            <div className="max-w-3xl lg:max-w-4xl">
-              {/* Name — large serif, word-by-word reveal */}
-              <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[7rem] font-semibold text-white leading-[1.05] mb-6">
-                <HeroAnimatedLine text="Rafael Alba" delay={0.5} />
-              </h1>
+          {/* Hero content - Cody-style minimal */}
+          <div className="hero-content max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="hero-copy">
+              {/* Name - large serif, word-by-word reveal */}
+              <h1 className="font-serif text-[3.5rem] sm:text-[4.5rem] md:text-[5.4rem] lg:text-[6.1rem] xl:text-[6.4rem] font-semibold text-charcoal leading-[0.92] tracking-[-0.02em] mb-7">
+  <span className="block">
+    <HeroAnimatedLine text="Let's Get IT" delay={0.5} />
+  </span>
+  <span className="block mt-1 sm:mt-2">
+    <HeroAnimatedLine text="Under Control" delay={0.78} />
+  </span>
+</h1>
 
-              {/* Tagline — one line, delayed fade */}
+              {/* Tagline - delayed fade */}
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, delay: 1.2, ease: EASE_OUT }}
-                className="font-serif text-xl sm:text-2xl md:text-3xl text-white/80 mb-10 max-w-2xl"
-              >
-                building tools, diagnostics & automation
-                <br className="hidden sm:block" />
-                {" "}that make support smarter
-              </motion.p>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.9, delay: 1.2, ease: EASE_OUT }}
+  className="text-[0.82rem] sm:text-[0.88rem] md:text-[0.96rem] font-semibold uppercase tracking-[0.28em] text-charcoal/72 mb-10"
+>
+  Practical support for business systems
+</motion.p>
 
-              {/* CTA — delayed fade */}
+              {/* CTA - delayed fade */}
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -492,7 +495,7 @@ export default function Home() {
                   onClick={() => scrollTo("#contact")}
                   className="btn-primary btn-press"
                 >
-                  Get in touch
+                  Get Help Today
                 </button>
               </motion.div>
             </div>
@@ -507,7 +510,7 @@ export default function Home() {
           >
             <button
               onClick={() => scrollTo("#services")}
-              className="flex flex-col items-center gap-2 text-white/40 hover:text-white/70 transition-colors"
+              className="flex flex-col items-center gap-2 text-charcoal/35 hover:text-charcoal/60 transition-colors"
               aria-label="Scroll to services"
             >
               <span className="scroll-indicator-line" />
@@ -516,7 +519,7 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* ═══════════ SERVICES ═══════════ */}
+        {/* SERVICES */}
         <section id="services" className="py-32 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <Reveal>
@@ -562,7 +565,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══════════ PROJECTS ═══════════ */}
+        {/* PROJECTS */}
         <section id="projects" className="py-32 md:py-40 bg-warm-gray">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <Reveal>
@@ -624,7 +627,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══════════ HOW I WORK ═══════════ */}
+        {/* HOW I WORK */}
         <section id="how-i-work" className="py-32 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <Reveal>
@@ -664,7 +667,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══════════ EXPERIENCE ═══════════ */}
+        {/* EXPERIENCE */}
         <section id="experience" className="py-32 md:py-40 bg-warm-gray">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <Reveal>
@@ -716,7 +719,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══════════ CERTIFICATIONS ═══════════ */}
+        {/* CERTIFICATIONS */}
         <section id="certifications" className="py-32 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <Reveal>
@@ -763,7 +766,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-3 text-xs text-mid-gray mt-3">
                     <span>{cert.issuer}</span>
-                    <span className="text-border-light">·</span>
+                    <span className="text-border-light">&middot;</span>
                     <span>{cert.year}</span>
                   </div>
                 </motion.div>
@@ -772,7 +775,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══════════ CONTACT ═══════════ */}
+        {/* CONTACT */}
         <section id="contact" className="relative bg-navy py-32 md:py-40">
           <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-light to-navy" />
           {/* Subtle top edge glow */}
@@ -836,7 +839,7 @@ export default function Home() {
                 </Reveal>
               </div>
 
-              {/* Right column — form */}
+              {/* Right column - form */}
               <Reveal delay={0.2}>
                 <form
                   onSubmit={handleSubmit}
@@ -959,7 +962,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* ═══════════ FOOTER ═══════════ */}
+      {/* FOOTER */}
       <footer className="bg-charcoal py-8">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/40 text-xs tracking-wide">

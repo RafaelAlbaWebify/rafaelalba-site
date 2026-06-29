@@ -28,7 +28,6 @@
   --foreground: #1A1A1A;
 }
 
-/* ═══════════════════ BASE ═══════════════════ */
 
 @layer base {
   * {
@@ -45,39 +44,37 @@
   }
 }
 
-/* ═══════════════════ SELECTION ═══════════════════ */
 
 ::selection {
   background-color: #0B1D3A;
   color: #FFFFFF;
 }
 
-/* ═══════════════════ SMOOTH SCROLL ═══════════════════ */
 
 html {
   scroll-behavior: smooth;
 }
 
-/* ═══════════════════ TYPOGRAPHY ═══════════════════ */
 
 .font-serif {
   font-family: var(--font-cormorant), 'Georgia', serif;
 }
 
-/* ═══════════════════ NAV ═══════════════════ */
 
 .nav-link {
   position: relative;
   display: inline-block;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.105em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(17, 17, 17, 0.92);
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.72);
   transition: color 0.3s ease;
 }
 .nav-link:hover {
-  color: #FFFFFF;
+  color: #0B1D3A;
 }
 .nav-link::after {
   content: '';
@@ -86,14 +83,13 @@ html {
   left: 0;
   width: 0;
   height: 1px;
-  background-color: #FFFFFF;
+  background-color: #0B1D3A;
   transition: width 0.35s ease;
 }
 .nav-link:hover::after {
   width: 100%;
 }
 
-/* ═══════════════════ HERO WORD REVEAL ═══════════════════ */
 
 .hero-word {
   display: inline-block;
@@ -105,7 +101,6 @@ html {
   transform: translateY(105%);
 }
 
-/* ═══════════════════ KEN BURNS HERO ═══════════════════ */
 
 @keyframes kenburns {
   0% {
@@ -120,7 +115,6 @@ html {
   animation: kenburns 25s ease-out forwards;
 }
 
-/* ═══════════════════ BUTTONS ═══════════════════ */
 
 .btn-press {
   transition: transform 80ms ease-in, box-shadow 200ms ease;
@@ -130,21 +124,21 @@ html {
 }
 
 .btn-primary {
-  background-color: #FFFFFF;
-  color: #0B1D3A;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  background-color: #2A2A2A;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  padding: 14px 32px;
+  padding: 16px 34px;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 .btn-primary:hover {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #111111;
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
 }
 
 .btn-outline {
@@ -164,7 +158,6 @@ html {
   color: #FFFFFF;
 }
 
-/* ═══════════════════ GHOST NUMBER ═══════════════════ */
 
 .ghost-number {
   font-family: var(--font-cormorant), 'Georgia', serif;
@@ -180,7 +173,6 @@ html {
   transition: color 0.5s ease;
 }
 
-/* ═══════════════════ ACCENT LINE ═══════════════════ */
 
 .accent-line {
   width: 48px;
@@ -188,7 +180,6 @@ html {
   background-color: #0B1D3A;
 }
 
-/* ═══════════════════ INPUT UNDERLINE ═══════════════════ */
 
 .input-underline {
   border: none;
@@ -209,7 +200,6 @@ html {
   color: rgba(255, 255, 255, 0.35);
 }
 
-/* ═══════════════════ GLASS CARD ═══════════════════ */
 
 .glass-card {
   background: rgba(255, 255, 255, 0.06);
@@ -218,7 +208,6 @@ html {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-/* ═══════════════════ SECTION LABEL ═══════════════════ */
 
 .section-label {
   font-size: 0.75rem;
@@ -236,7 +225,6 @@ html {
   color: rgba(255, 255, 255, 0.6);
 }
 
-/* ═══════════════════ SERVICE CARD ═══════════════════ */
 
 .service-card {
   background: #FAFAFA;
@@ -266,7 +254,6 @@ html {
   height: 100%;
 }
 
-/* ═══════════════════ CERTIFICATE BADGE ═══════════════════ */
 
 .cert-card {
   background: #FAFAFA;
@@ -290,7 +277,6 @@ html {
   transform: translateY(-4px);
 }
 
-/* ═══════════════════ EXPERIENCE TIMELINE ═══════════════════ */
 
 .timeline-line {
   position: absolute;
@@ -311,7 +297,6 @@ html {
   top: 8px;
 }
 
-/* ═══════════════════ PROJECT CARD ═══════════════════ */
 
 .project-card {
   background: #FFFFFF;
@@ -332,14 +317,12 @@ html {
   color: rgba(11, 29, 58, 0.18);
 }
 
-/* ═══════════════════ MOBILE MENU OVERLAY ═══════════════════ */
 
 .mobile-overlay {
   background: rgba(11, 29, 58, 0.95);
   backdrop-filter: blur(12px);
 }
 
-/* ═══════════════════ SECTION HEADING DRAMATIC ═══════════════════ */
 
 .section-heading {
   font-family: var(--font-cormorant), 'Georgia', serif;
@@ -348,7 +331,6 @@ html {
   letter-spacing: -0.01em;
 }
 
-/* ═══════════════════ SCROLLBAR ═══════════════════ */
 
 ::-webkit-scrollbar {
   width: 6px;
@@ -364,7 +346,6 @@ html {
   background: rgba(0, 0, 0, 0.25);
 }
 
-/* ═══════════════════ SCROLL INDICATOR ═══════════════════ */
 
 @keyframes scroll-bounce {
   0%, 100% {
@@ -381,6 +362,219 @@ html {
   display: block;
   width: 1px;
   height: 32px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0));
+  background: linear-gradient(to bottom, rgba(26,26,26,0.35), rgba(26,26,26,0));
   animation: scroll-bounce 2s ease-in-out infinite;
 }
+
+/* RAFAEL HERO RESPONSIVE LAYOUT START */
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.hero-picture {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.hero-copy {
+  max-width: 45rem;
+}
+
+/* Mobile: use the tall prepared image, with smaller text. */
+@media (max-width: 767px) {
+  .hero-section {
+    min-height: 100svh;
+    align-items: flex-end;
+  }
+
+  .hero-image {
+    object-position: center top;
+  }
+
+  .hero-content {
+    padding-top: 7.5rem;
+    padding-bottom: 4.25rem;
+  }
+
+  .hero-copy {
+    max-width: 70vw;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.65rem, 10.8vw, 3.25rem) !important;
+    line-height: 0.9 !important;
+    letter-spacing: -0.025em !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .hero-copy h1 .hero-word {
+    margin-right: 0.24em;
+  }
+
+  .hero-copy p {
+    max-width: 70vw;
+    font-size: 0.66rem !important;
+    line-height: 1.5 !important;
+    letter-spacing: 0.16em !important;
+    margin-bottom: 1.75rem !important;
+  }
+
+  .hero-copy .btn-primary {
+    font-size: 0.75rem;
+    padding: 14px 28px;
+  }
+}
+
+/* Middle sizes: use the desktop hero but avoid extreme height/cropping. */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .hero-section {
+    min-height: 660px;
+    height: min(78vw, 760px);
+    max-height: 760px;
+    align-items: center;
+  }
+
+  .hero-image {
+    object-position: center center;
+  }
+
+  .hero-content {
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
+
+  .hero-copy {
+    max-width: min(52vw, 42rem);
+  }
+}
+
+/* Desktop: Cody-style wide scene. */
+@media (min-width: 1200px) {
+  .hero-section {
+    min-height: 720px;
+    height: min(100svh, 880px);
+    align-items: center;
+  }
+
+  .hero-image {
+    object-position: center center;
+  }
+
+  .hero-content {
+    padding-top: 7rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-copy {
+    max-width: 45rem;
+  }
+}
+
+/* RAFAEL HERO RESPONSIVE LAYOUT END */
+
+/* RAFAEL MOBILE STACKED HERO START */
+
+/*
+  Mobile hero v4:
+  - desktop/tablet untouched
+  - original hero picture hidden on mobile
+  - clean mobile image block created after CTA
+  - removes accidental image strip behind header
+*/
+@media (max-width: 767px) {
+  .hero-section {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    padding-top: 5.25rem !important;
+  }
+
+  .hero-picture {
+    display: none !important;
+  }
+
+  .hero-content {
+    order: 1 !important;
+    position: relative !important;
+    z-index: 10 !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 1.35rem 1.5rem 3.25rem !important;
+    background: #ffffff !important;
+  }
+
+  .hero-copy {
+    max-width: 24rem !important;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3rem, 13vw, 3.9rem) !important;
+    line-height: 0.9 !important;
+    letter-spacing: -0.025em !important;
+    margin-bottom: 1.1rem !important;
+    color: #1a1a1a !important;
+  }
+
+  .hero-copy h1 .hero-word {
+    margin-right: 0.22em !important;
+  }
+
+  .hero-copy p {
+    max-width: 22rem !important;
+    font-size: 0.68rem !important;
+    line-height: 1.55 !important;
+    letter-spacing: 0.16em !important;
+    margin-bottom: 1.6rem !important;
+    color: rgba(26, 26, 26, 0.72) !important;
+  }
+
+  .hero-copy .btn-primary {
+    font-size: 0.75rem !important;
+    padding: 14px 28px !important;
+  }
+
+  .hero-section::after {
+    content: "" !important;
+    order: 2 !important;
+    display: block !important;
+    width: 100% !important;
+    height: clamp(220px, 35svh, 310px) !important;
+    background-image: url("/images/hero-mobile-tall.png") !important;
+    background-size: cover !important;
+    background-position: center 58% !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .hero-section > .bottom-8 {
+    display: none !important;
+  }
+}
+
+/* RAFAEL MOBILE STACKED HERO END */
