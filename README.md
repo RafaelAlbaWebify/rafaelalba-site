@@ -2,70 +2,74 @@
 
 This is the repository for my personal website: [rafaelalba.com](https://rafaelalba.com/).
 
-The site represents **Rafael Alba** as the public personal brand. Webify Digital Solutions Ltd is my legal/B2B vehicle, but it should not be presented as the main public brand.
+The site represents **Rafael Alba** as the public professional brand. Webify Digital Solutions Ltd is my Irish legal and B2B vehicle for contract delivery, but it is not the main public brand.
 
-## Current Role In My Portfolio
+## Current portfolio direction
 
-| Site | Purpose |
-|---|---|
-| rafaelalba.com | Personal brand, technical portfolio, service positioning and contact point |
-| Webify Digital Solutions Ltd | Legal/B2B vehicle for contract or client delivery |
+The website should present one coherent professional direction:
 
-## Portfolio Direction
+- Enterprise Application Support and Support Engineering;
+- IAM and access-support investigation;
+- IT Operations, automation and production evidence.
 
-The website should gradually align with my six-flagship technical portfolio:
+## Current public projects
 
-| Area | Flagship | Target role | Website positioning |
-|---|---|---|---|
-| IAM | TRACE | IAM Engineer | Identity and access troubleshooting evidence |
-| ASE | INFIOS | Application Support Engineer | Application incident, API/log and escalation workflows |
-| SOC | CustosOps | SOC Analyst | Defensive security evidence and SMB security hygiene |
-| AUTO | WATCH | IT Automation Engineer | Website/domain monitoring and workflow automation |
-| IPPO | OPSCORE | Infrastructure / Production Operations Engineer | DNS, service, certificate, dependency and production evidence |
-| AIDE | YTIS | AI Developer / GenAI Application Developer | Source intelligence, extraction, classification and report generation |
+| Project | Area | Public positioning |
+|---|---|---|
+| [TRACE IAM Evidence](https://github.com/RafaelAlbaWebify/trace-iam-evidence) | IAM / Access Support | Completed local-first, read-only evidence investigation workbench |
+| [INFIOS](https://github.com/RafaelAlbaWebify/infios-app-support-workbench) | Application Support | Persistent L1-to-L2 incident investigation and escalation workbench |
+| [OPSCORE](https://github.com/RafaelAlbaWebify/opscore) | Infrastructure / Production Operations | Correlation of DNS, HTTP, TLS and dependency evidence |
+| [WATCH](https://github.com/RafaelAlbaWebify/watch-automation-control-hub) | IT Automation | Approved-target checks, immutable evidence, change detection and action tracking |
+| [JOLT](https://github.com/RafaelAlbaWebify/jolt-job-tracker) | Supporting automation project | Explainable parsing, classification and local decision workflows |
+| [DNS Audit Tool](https://github.com/RafaelAlbaWebify/dns-audit-tool) | Supporting infrastructure utility | Read-only DNS evidence and consistency reporting |
+| [Endpoint Support Checklist](https://github.com/RafaelAlbaWebify/endpoint-support-checklist-powershell) | Supporting endpoint utility | Repeatable Windows endpoint checks and ticket-ready evidence |
 
-## Current Public Project Emphasis
+The archived [`trace-ops`](https://github.com/RafaelAlbaWebify/trace-ops) repository is retained only as development history. The current TRACE repository is `trace-iam-evidence`.
 
-The site should prioritize public, reviewable proof first:
+## Website messaging
 
-1. TRACE - public IAM / support-diagnostics flagship
-2. DNS Audit Tool - public OPSCORE DNS module
-3. Endpoint Support Checklist - public supporting IAM/SOC/IPPO utility
-4. JOLT - public supporting AIDE/AUTO proof project
-5. Enterprise Ops + AI Platform Support Lab - supporting archive/incubator
+The public site should lead with the problem I solve rather than with a list of technologies:
 
-Private or planned tools such as INFIOS, WATCH, OPSCORE and YTIS should not be over-presented on the live site until they have working public-safe repositories or screenshots.
+> I turn scattered technical evidence into clearer troubleshooting paths, safer next actions and stronger escalation handovers.
 
-## Messaging Rule
-
-Use first person.
+Use first person and describe only capabilities supported by public proof.
 
 Good:
 
 ```text
-I build practical tools that turn scattered support evidence into clearer troubleshooting paths.
+I build practical tools that help structure application, identity and operational-support investigations.
 ```
 
 Avoid:
 
 ```text
-Rafael Alba builds an ecosystem...
+Rafael Alba builds an ecosystem of enterprise platforms.
 ```
 
-The website should sound like me explaining my work directly, not like an agency describing a client.
+The site should sound like me explaining my work directly, not like an agency describing a client.
 
-## Technical Notes
+## Project priority on the website
+
+1. TRACE — IAM and access investigation.
+2. INFIOS — Application Support and L1-to-L2 incident handling.
+3. OPSCORE — infrastructure and production evidence.
+4. WATCH — operational checks and controlled automation.
+5. Supporting utilities and labs.
+
+Private or experimental repositories should not be presented as public proof.
+
+## Technical notes
 
 The site is built with:
 
-- Next.js
-- React
-- TypeScript
-- Tailwind-style utility classes
-- Framer Motion
-- shadcn/Radix-style UI dependencies
+- Next.js;
+- React;
+- TypeScript;
+- utility-first CSS;
+- Framer Motion;
+- shadcn/Radix-style UI dependencies.
 
-## Local Development
+## Local development
 
 Install dependencies:
 
@@ -85,19 +89,19 @@ Build:
 npm run build
 ```
 
-Preview static output if available:
+Preview the production build where supported:
 
 ```powershell
 npm run start
 ```
 
-## Content Safety Notes
+## Content safety checks
 
 Before publishing changes, verify:
 
-- no private workplace/customer names are exposed
-- no private paths, logs or generated evidence bundles are committed
-- Webify is described as the legal/B2B vehicle, not the main brand
-- flagship claims match actual repository status
-- private repositories are not presented as public proof
-- service claims stay practical and defensible
+- no private workplace, customer or tenant information is exposed;
+- no private paths, logs or generated evidence bundles are committed;
+- project claims match the current public repositories;
+- archived repositories are not presented as maintained;
+- Webify is described as the legal/B2B vehicle, not the main brand;
+- service claims remain practical and defensible.
