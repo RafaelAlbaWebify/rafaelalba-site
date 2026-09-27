@@ -33,15 +33,22 @@ jobs:
           async function capture(viewport, prefix) {
             const page = await browser.newPage({ viewport });
             await page.goto("https://rafaelalba.com/", { waitUntil: "networkidle", timeout: 120000 });
-            await page.screenshot({ path: `visual-baseline/${prefix}-full.png`, fullPage: true });
+            await page.waitForTimeout(2400);
 
             const sections = ["hero", "services", "projects", "how-i-work", "experience", "certifications", "contact"];
+
             for (const id of sections) {
               const locator = page.locator(`#${id}`);
               if (await locator.count()) {
+                await locator.scrollIntoViewIfNeeded();
+                await page.waitForTimeout(900);
                 await locator.screenshot({ path: `visual-baseline/${prefix}-${id}.png` });
               }
             }
+
+            await page.evaluate(() => window.scrollTo(0, 0));
+            await page.waitForTimeout(600);
+            await page.screenshot({ path: `visual-baseline/${prefix}-full.png`, fullPage: true });
           }
 
           await capture({ width: 1440, height: 1000 }, "desktop");
