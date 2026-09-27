@@ -1,114 +1,130 @@
 # Website Portfolio Alignment
 
-This document defines how `rafaelalba.com` should align with my GitHub portfolio and LinkedIn positioning.
+## Purpose
 
-## Main Principle
+This document keeps `rafaelalba.com` aligned with the current professional positioning used across the master CVs, LinkedIn and GitHub.
 
-The public brand is **Rafael Alba**.
+## Public positioning
 
-Webify Digital Solutions Ltd is my legal/B2B vehicle for contract or client work. It should appear where relevant, but it should not replace the personal brand.
+Primary identity:
 
-## Current Website Positioning
+> **Application Support & IT Operations Engineer**
 
-The current site already focuses on practical IT support, diagnostics, documentation and support automation.
+Primary target roles:
 
-That is good. The next improvement is to connect those themes to the six-flagship portfolio without making the site feel overloaded or scattered.
+- Application Support Engineer
+- Production Support Engineer
+- Technical Support Engineer
+- IT Operations Engineer
+- Software / SaaS Support Engineer
 
-## Recommended Website Sections
+Supporting capabilities:
 
-### 1. Hero
+- Modern Workplace
+- Automation
+- Cloud
+- Cybersecurity
+- Applied AI for IT workflows
 
-Purpose:
+The site should not position Rafael primarily as:
 
-- Make the personal brand clear.
-- Explain the practical value quickly.
+- an N1 / help-desk profile;
+- a generic web developer;
+- a cybersecurity engineer;
+- a cloud architect;
+- an AI engineer;
+- an SMB digital-marketing agency.
 
-Recommended direction:
+## Evidence hierarchy
 
-```text
-I help turn scattered IT support evidence into clearer troubleshooting paths, safer handovers and practical automation.
-```
+Use professional employment first for production claims.
 
-Avoid making the hero only about Webify.
+### Professional evidence
 
-### 2. Services
+- Quental / FORVIA: production-critical industrial IT operations, enterprise applications, Windows, DNS, infrastructure dependencies, OPC/PLC connectivity, changes, validation and escalation.
+- Auxilion: L2 Microsoft 365 / Windows support for approximately 3,000 users, escalated cases and ITSM workflows.
+- Communisis: endpoint, access, patching and security-aware corporate support.
+- BEEP Informática: long-term hands-on IT services ownership and technical leadership.
+- Webify: current IT Operations, support automation and public technical tooling.
 
-Keep services practical and close to real capability:
+### Portfolio evidence
 
-- Microsoft 365 / Entra ID support evidence
-- Endpoint and application support
-- DNS / infrastructure diagnostics
-- Website/domain operational checks
-- Documentation, runbooks and escalation notes
-- Support automation and reporting workflows
+Portfolio projects demonstrate practical depth, but must retain explicit boundaries where they use public-safe, synthetic, exported or lab evidence.
 
-### 3. Portfolio
+Do not describe lab or portfolio capability as enterprise production ownership.
 
-Prioritize public proof first:
+## Current website structure
 
-| Project | Website role |
-|---|---|
-| TRACE | Main technical proof for IAM/support diagnostics |
-| DNS Audit Tool | OPSCORE DNS module / infrastructure evidence proof |
-| Endpoint Support Checklist | Endpoint support evidence utility |
-| JOLT | Supporting proof for local-first automation and structured decision workflows |
-| Enterprise Ops + AI Platform Support Lab | Supporting archive / interview and practice evidence |
+### Hero
 
-### 4. Six-Flagship Portfolio
+Recruiter-first.
 
-This should be introduced carefully. It can be a small section rather than the main service pitch.
+Use:
 
-Suggested language:
+- Application Support & IT Operations Engineer
+- L2 support / evidence / automation
+- CTA toward Experience or Projects
 
-```text
-I organize my technical portfolio around six practical areas: identity, application support, security operations, automation, infrastructure/production operations and AI-enabled development.
-```
+Avoid sales-first language such as “Get Help Today”.
 
-Then show the table:
+### Capabilities
 
-| Area | Flagship | Status |
-|---|---|---|
-| IAM | TRACE | Public |
-| ASE | INFIOS | Planned |
-| SOC | CustosOps | Private-first |
-| AUTO | WATCH | Planned |
-| IPPO | OPSCORE | Planned; DNS module public |
-| AIDE | YTIS | Planned |
+The main capability groups are:
 
-### 5. Contact
+1. Application & Production Support
+2. Microsoft 365, Identity & Endpoints
+3. IT Operations & Infrastructure
+4. Automation & Diagnostics
 
-Use direct personal-brand language:
+### Projects
 
-```text
-Contact me directly. B2B or contract delivery can be handled through Webify Digital Solutions Ltd when appropriate.
-```
+Projects shown on the homepage are **selected public proof**, not necessarily the complete flagship set.
 
-## What Not To Do
+The dedicated Featured/portfolio review decides which projects earn flagship placement.
 
-Do not present:
+Current safe public examples may include:
 
-- Webify as the main public brand
-- unfinished tools as completed products
-- private repositories as public proof
-- DNS Audit Tool as the whole IPPO flagship
-- JOLT as one of the six core flagships
-- the Enterprise Ops Lab as a seventh flagship
+- TRACE IAM Evidence
+- DNS Audit Tool
+- Endpoint Support Checklist
 
-## Near-Term Website Content Changes
+Expected flagship candidates under separate review:
 
-1. Add JOLT to selected projects as a supporting project.
-2. Reframe DNS Audit Tool as OPSCORE DNS Module.
-3. Mention TRACE as IAM/support-diagnostics flagship.
-4. Add a small six-flagship table lower on the page.
-5. Adjust Webify wording to legal/B2B vehicle only.
-6. Avoid adding WATCH/YTIS/INFIOS/OPSCORE as links until public repos exist.
+- INFIOS
+- OPSCORE
+- TRACE
+- WATCH
 
-## Verification Checklist
+Do not promote a candidate solely for consistency. Professional quality takes precedence over symmetry.
 
-Before publishing a content change:
+### Experience
 
-- Does it sound like me speaking in first person?
-- Does it avoid overclaiming?
-- Does every public link work for a normal visitor?
-- Does each project have the right role: flagship, module, utility or archive?
-- Does the site still feel focused rather than scattered?
+Website Experience should stay semantically aligned with LinkedIn and the master CVs while remaining more concise.
+
+### Certifications
+
+The website uses a curated selection. LinkedIn remains the full credential history.
+
+### Contact
+
+Lead with availability for Application Support / Production Support / Technical Support / IT Operations roles.
+
+B2B or contract delivery may be handled through Webify Digital Solutions Ltd where appropriate.
+
+## Cross-surface QA
+
+Before closing the homogeneity project, compare:
+
+**CV ↔ LinkedIn ↔ GitHub ↔ Website**
+
+Verify:
+
+- professional title and target roles;
+- employer chronology;
+- L2 positioning;
+- capability hierarchy;
+- project names and canonical URLs;
+- cloud/security/AI boundaries;
+- degree completion;
+- contact details and profile links;
+- no obsolete sales-first or web-development-first positioning.
