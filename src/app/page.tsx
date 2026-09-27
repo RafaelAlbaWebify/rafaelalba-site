@@ -191,7 +191,7 @@ const EXPERIENCE = [
   },
   {
     period: "2025 — 2026",
-    title: "IT Operations Engineer — Manufacturing Client",
+    title: "IT Support Engineer | IT Operations — FORVIA",
     company: "Quental",
     location: "Vigo, Spain · Hybrid",
     bullets: [
