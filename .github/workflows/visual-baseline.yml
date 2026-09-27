@@ -64,4 +64,4 @@ jobs:
           name: rafaelalba-current-visual-baseline
           path: visual-baseline/
           if-no-files-found: error
-          retention-days: 7
+          retention-days: 6
