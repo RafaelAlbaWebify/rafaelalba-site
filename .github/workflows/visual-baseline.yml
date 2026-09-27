@@ -31,7 +31,7 @@ jobs:
           const browser = await chromium.launch({ headless: true });
 
           async function capture(viewport, prefix) {
-            const page = await browser.newPage({ viewportSize: viewport });
+            const page = await browser.newPage({ viewport });
             await page.goto("https://rafaelalba.com/", { waitUntil: "networkidle", timeout: 120000 });
             await page.screenshot({ path: `visual-baseline/${prefix}-full.png`, fullPage: true });
 
