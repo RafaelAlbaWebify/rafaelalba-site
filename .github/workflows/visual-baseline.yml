@@ -1,0 +1,60 @@
+name: Capture current website visual baseline
+
+on:
+  push:
+    branches:
+      - visual-baseline-20260927
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Capture published site
+        run: |
+          mkdir -p visual-baseline
+          cat > /tmp/capture.mjs <<'EOF'
+          import { chromium } from "playwright";
+
+          const browser = await chromium.launch({ headless: true });
+
+          async function capture(viewport, prefix) {
+            const page = await browser.newPage({ viewportSize: viewport });
+            await page.goto("https://rafaelalba.com/", { waitUntil: "networkidle", timeout: 120000 });
+            await page.screenshot({ path: `visual-baseline/${prefix}-full.png`, fullPage: true });
+
+            const sections = ["hero", "services", "projects", "how-i-work", "experience", "certifications", "contact"];
+            for (const id of sections) {
+              const locator = page.locator(`#${id}`);
+              if (await locator.count()) {
+                await locator.screenshot({ path: `visual-baseline/${prefix}-${id}.png` });
+              }
+            }
+          }
+
+          await capture({ width: 1440, height: 1000 }, "desktop");
+          await capture({ width: 390, height: 844 }, "mobile");
+
+          await browser.close();
+          EOF
+          node /tmp/capture.mjs
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: rafaelalba-current-visual-baseline
+          path: visual-baseline/
+          if-no-files-found: error
+          retention-days: 7
