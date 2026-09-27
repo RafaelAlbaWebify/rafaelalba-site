@@ -1,62 +1,84 @@
 # rafaelalba-site
 
-This is the repository for my personal website: [rafaelalba.com](https://rafaelalba.com/).
+This is the repository for my personal professional website: [rafaelalba.com](https://rafaelalba.com/).
 
-The site represents **Rafael Alba** as the public professional brand. Webify Digital Solutions Ltd is my Irish legal and B2B vehicle for contract delivery, but it is not the main public brand.
+The public brand is **Rafael Alba**. Webify Digital Solutions Ltd is my Irish legal/B2B vehicle for contract delivery, not the primary professional identity.
 
-## Current portfolio direction
+## Professional positioning
 
-The website should present one coherent professional direction:
+The website should stay aligned with the master CVs, LinkedIn and GitHub portfolio:
 
-- Enterprise Application Support and Support Engineering;
-- IAM and access-support investigation;
-- IT Operations, automation and production evidence.
+- **Core:** Application Support / Production Support / SaaS Support and IT Operations.
+- **Supporting:** Automation, Modern Workplace, Cloud and Cybersecurity.
+- **Applied AI:** a transversal capability used in operational tooling and workflows, not an AI Engineer positioning.
+- **Credibility boundary:** portfolio and lab work must not be presented as enterprise production ownership where that experience is not established.
 
-## Current public projects
+The preferred public title is:
 
-| Project | Area | Public positioning |
+> Application Support & IT Operations Engineer
+
+## Experience narrative
+
+The public site should reinforce a clear progression:
+
+1. Webify Digital Solutions Ltd — Founder | IT Operations & Automation.
+2. Quental / FORVIA — production-critical manufacturing support and IT operations.
+3. Auxilion — L2 Microsoft 365 / Windows support for approximately 3,000 users.
+4. Communisis — endpoint, access and security-aware corporate support.
+5. BEEP Informática — long-term IT services ownership and technical leadership.
+
+## Current portfolio
+
+The broader GitHub portfolio is organized around:
+
+| Project | Area | Role |
 |---|---|---|
-| [TRACE IAM Evidence](https://github.com/RafaelAlbaWebify/trace-iam-evidence) | IAM / Access Support | Completed local-first, read-only evidence investigation workbench |
-| [INFIOS](https://github.com/RafaelAlbaWebify/infios-app-support-workbench) | Application Support | Persistent L1-to-L2 incident investigation and escalation workbench |
-| [OPSCORE](https://github.com/RafaelAlbaWebify/opscore) | Infrastructure / Production Operations | Correlation of DNS, HTTP, TLS and dependency evidence |
-| [WATCH](https://github.com/RafaelAlbaWebify/watch-automation-control-hub) | IT Automation | Approved-target checks, immutable evidence, change detection and action tracking |
-| [JOLT](https://github.com/RafaelAlbaWebify/jolt-job-tracker) | Supporting automation project | Explainable parsing, classification and local decision workflows |
-| [DNS Audit Tool](https://github.com/RafaelAlbaWebify/dns-audit-tool) | Supporting infrastructure utility | Read-only DNS evidence and consistency reporting |
-| [Endpoint Support Checklist](https://github.com/RafaelAlbaWebify/endpoint-support-checklist-powershell) | Supporting endpoint utility | Repeatable Windows endpoint checks and ticket-ready evidence |
+| [INFIOS](https://github.com/RafaelAlbaWebify/infios-app-support-workbench) | Application Support | Flagship candidate under active portfolio review |
+| [OPSCORE](https://github.com/RafaelAlbaWebify/opscore) | IT & Cloud Operations | Flagship candidate under active portfolio review |
+| [TRACE IAM Evidence](https://github.com/RafaelAlbaWebify/trace-iam-evidence) | Identity / Modern Workplace | Current maintained TRACE project |
+| [WATCH](https://github.com/RafaelAlbaWebify/watch-automation-control-hub) | Automation / Operations | Flagship candidate under active portfolio review |
+| [CustosOps](https://github.com/RafaelAlbaWebify/custosops) | Cybersecurity | Specialized supporting project |
+| [YTIS](https://github.com/RafaelAlbaWebify/ytis) | Applied AI | Specialized supporting project |
+| [DNS Audit Tool](https://github.com/RafaelAlbaWebify/dns-audit-tool) | Infrastructure | Supporting utility |
+| [Endpoint Support Checklist](https://github.com/RafaelAlbaWebify/endpoint-support-checklist-powershell) | Endpoint / Modern Workplace | Supporting utility |
 
-The archived [`trace-ops`](https://github.com/RafaelAlbaWebify/trace-ops) repository is retained only as development history. The current TRACE repository is `trace-iam-evidence`.
+The archived `trace-ops` repository is development history only. The canonical TRACE repository is `trace-iam-evidence`.
 
-## Website messaging
+## Website project policy
 
-The public site should lead with the problem I solve rather than with a list of technologies:
+The website's **Projects** section is intentionally conservative while the dedicated portfolio/Featured review is in progress.
 
-> I turn scattered technical evidence into clearer troubleshooting paths, safer next actions and stronger escalation handovers.
+Do not promote a project to the main website merely because the repository exists. A flagship should first pass a practical review of:
 
-Use first person and describe only capabilities supported by public proof.
+- professional usefulness;
+- workflow realism;
+- technical depth;
+- UX/UI;
+- evidence and reporting;
+- safety boundaries;
+- tests/CI;
+- public documentation.
+
+Until that review is complete, it is acceptable for the website to show a smaller set of proven public examples.
+
+## Messaging rules
+
+Lead with professional capability and evidence, not SMB sales copy.
 
 Good:
 
 ```text
-I build practical tools that help structure application, identity and operational-support investigations.
+Application Support & IT Operations Engineer
+L2 support, structured evidence and practical automation.
 ```
 
 Avoid:
 
 ```text
-Rafael Alba builds an ecosystem of enterprise platforms.
+Get your IT under control today.
 ```
 
-The site should sound like me explaining my work directly, not like an agency describing a client.
-
-## Project priority on the website
-
-1. TRACE — IAM and access investigation.
-2. INFIOS — Application Support and L1-to-L2 incident handling.
-3. OPSCORE — infrastructure and production evidence.
-4. WATCH — operational checks and controlled automation.
-5. Supporting utilities and labs.
-
-Private or experimental repositories should not be presented as public proof.
+The website may still mention B2B availability, but recruiter/job positioning comes first.
 
 ## Technical notes
 
@@ -71,37 +93,25 @@ The site is built with:
 
 ## Local development
 
-Install dependencies:
-
 ```powershell
 npm install
-```
-
-Run locally:
-
-```powershell
 npm run dev
 ```
 
-Build:
+Production build:
 
 ```powershell
 npm run build
 ```
 
-Preview the production build where supported:
+## Release checks
 
-```powershell
-npm run start
-```
+Before publishing changes:
 
-## Content safety checks
-
-Before publishing changes, verify:
-
-- no private workplace, customer or tenant information is exposed;
-- no private paths, logs or generated evidence bundles are committed;
-- project claims match the current public repositories;
-- archived repositories are not presented as maintained;
-- Webify is described as the legal/B2B vehicle, not the main brand;
-- service claims remain practical and defensible.
+- build must pass;
+- desktop and mobile layouts must be visually checked;
+- headline, Experience and target roles must agree with LinkedIn and the master CVs;
+- project links must point to maintained repositories;
+- no private workplace, client, tenant or credential data may be exposed;
+- portfolio/lab capabilities must not be upgraded into unsupported production experience;
+- Webify must remain the legal/B2B vehicle, not the main public brand.
