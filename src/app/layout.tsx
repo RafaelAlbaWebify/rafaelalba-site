@@ -22,29 +22,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rafael Alba — Microsoft 365 & IT Operations Support",
+  title: "Rafael Alba — Application Support & IT Operations Engineer",
   description:
-    "Microsoft 365, Entra ID and endpoint support with structured diagnostics, clear documentation and practical PowerShell automation. Available for remote roles and B2B support contracts.",
+    "Application Support and IT Operations Engineer with L2 experience across Microsoft 365, Windows, identity, enterprise applications and infrastructure, complemented by automation, cloud and cybersecurity.",
   keywords: [
     "Rafael Alba",
+    "Application Support Engineer",
+    "Production Support Engineer",
+    "Technical Support Engineer",
     "IT Operations Engineer",
+    "Software Support Engineer",
     "Microsoft 365 support",
     "Entra ID support",
-    "Endpoint support",
-    "IT Support Engineer",
-    "Application Support Engineer",
+    "Windows support",
+    "Incident Management",
     "PowerShell automation",
-    "Microsoft 365 troubleshooting",
-    "Identity and access troubleshooting",
-    "Support Automation",
+    "Python automation",
     "Remote IT Operations",
-    "M365 Support Engineer",
   ],
   authors: [{ name: "Rafael Alba" }],
   openGraph: {
-    title: "Rafael Alba — Microsoft 365 & IT Operations Support",
+    title: "Rafael Alba — Application Support & IT Operations Engineer",
     description:
-      "Microsoft 365, Entra ID and endpoint support with structured diagnostics, clear documentation and practical automation.",
+      "L2 Application Support and IT Operations across Microsoft 365, Windows, identity, enterprise applications, infrastructure and practical automation.",
     type: "website",
   },
 };
