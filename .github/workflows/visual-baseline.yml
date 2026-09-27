@@ -25,7 +25,7 @@ jobs:
       - name: Capture published site
         run: |
           mkdir -p visual-baseline
-          cat > /tmp/capture.mjs <<'EOF'
+          cat > capture.mjs <<'EOF'
           import { chromium } from "playwright";
 
           const browser = await chromium.launch({ headless: true });
@@ -49,7 +49,7 @@ jobs:
 
           await browser.close();
           EOF
-          node /tmp/capture.mjs
+          node capture.mjs
 
       - name: Upload screenshots
         uses: actions/upload-artifact@v4
