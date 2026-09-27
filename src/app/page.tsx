@@ -115,7 +115,7 @@ function HeroAnimatedLine({ text, delay = 0 }: { text: string; delay?: number })
 /* --- DATA --- */
 
 const NAV_LINKS = [
-  { label: "Services", href: "#services" },
+  { label: "Capabilities", href: "#services" },
   { label: "Projects", href: "#projects" },
   { label: "Approach", href: "#how-i-work" },
   { label: "Experience", href: "#experience" },
@@ -126,38 +126,38 @@ const NAV_LINKS = [
 const SERVICES = [
   {
     icon: Wrench,
-    title: "Microsoft 365 & Entra ID Support",
+    title: "Application & Production Support",
     description:
-      "Users can't access mailboxes, Teams, SharePoint or OneDrive. Login loops, conditional access blocks, sync failures affecting the whole floor. I investigate the evidence, narrow down the likely cause and hand over clear next steps.",
+      "I investigate application incidents by separating symptoms from assumptions, collecting evidence, validating impact and preparing clear L2 escalation or recovery steps.",
   },
   {
     icon: Server,
-    title: "Endpoint & Application Support",
+    title: "Microsoft 365, Identity & Endpoints",
     description:
-      "Intermittent app crashes, devices falling out of compliance, VPN dropping mid-shift, or a production system slowing down for users who can't describe what changed. I collect the evidence that turns vague symptoms into fixable cases.",
+      "Hands-on support across Microsoft 365, Entra ID, Active Directory, Windows and endpoint workflows, including access, authentication, policy and compliance-related troubleshooting.",
   },
   {
     icon: FileText,
-    title: "Runbooks & Escalation Documentation",
+    title: "IT Operations & Infrastructure",
     description:
-      "Your Tier 1 keeps escalating the same issues because nobody wrote down the fix. I turn repeatable incidents into structured runbooks, evidence packs and handover notes that any team member can follow.",
+      "Operational troubleshooting across Windows, DNS, VMware, monitoring, backups and infrastructure dependencies, with an emphasis on production continuity and evidence-based handover.",
   },
   {
     icon: Terminal,
-    title: "Support Automation & Diagnostics",
+    title: "Automation & Diagnostics",
     description:
-      "The same manual checks run every week — DNS lookups, M365 license audits, endpoint compliance scans. I build PowerShell and Python tools that collect the evidence automatically, so your team spends time on decisions, not data gathering.",
+      "I use PowerShell and Python to turn repeated checks, evidence collection and reporting into practical workflows using APIs, JSON/CSV data and automated validation.",
   },
 ];
 
 const PROJECTS = [
   {
-    title: "TRACE",
-    subtitle: "Troubleshooting Reports Across Cloud & Endpoints",
+    title: "TRACE IAM Evidence",
+    subtitle: "Identity / Modern Workplace Investigation",
     description:
-      "A local-first diagnostic toolkit for turning Microsoft 365, Entra ID, endpoint and infrastructure evidence into support-ready reports. Built with Python, PowerShell and a TypeScript web UI.",
-    tags: ["Python", "PowerShell", "TypeScript", "FastAPI", "M365", "Entra ID"],
-    url: "https://github.com/RafaelAlbaWebify/trace-ops",
+      "A local-first, read-only IAM evidence workbench for structuring redacted access-support evidence, evaluating deterministic troubleshooting rules and producing reviewable reports.",
+    tags: ["Python", "FastAPI", "Entra ID", "Conditional Access", "Evidence"],
+    url: "https://github.com/RafaelAlbaWebify/trace-iam-evidence",
   },
   {
     title: "DNS Audit Tool",
@@ -180,25 +180,25 @@ const PROJECTS = [
 const EXPERIENCE = [
   {
     period: "2024 — Present",
-    title: "B2B IT Operations & Digital Support",
-    company: "Webify Digital Solutions",
+    title: "Founder | IT Operations & Automation",
+    company: "Webify Digital Solutions Ltd",
     location: "Dublin, Ireland · Remote",
     bullets: [
-      "B2B IT operations support — Microsoft 365, email, DNS and endpoint troubleshooting",
-      "Structured diagnostics, PowerShell automation and repeatable support workflows",
-      "Documentation, runbooks and clear escalation handovers",
+      "Built support workflows across applications, identity, endpoints and access",
+      "Built PowerShell/Python tooling for troubleshooting, evidence collection and repeatable IT workflows",
+      "Developed M365, Entra, Intune, Azure/AWS and AI-assisted operational scenarios with clear safety boundaries",
     ],
   },
   {
     period: "2025 — 2026",
     title: "IT Operations Engineer — Manufacturing Client",
     company: "Quental",
-    location: "Remote",
+    location: "Vigo, Spain · Hybrid",
     bullets: [
-      "Resolved incidents across M365, Entra ID, Windows, DNS and endpoints in production-critical automotive manufacturing",
-      "Worked with VMware/vSphere/ESXi, monitoring, backup and ServiceNow",
-      "Diagnosed issues across network, endpoints, OPC and PLC connectivity",
-      "Created runbooks to improve troubleshooting consistency and escalation quality",
+      "Investigated production-critical incidents across enterprise applications, Windows, identity and DNS",
+      "Diagnosed dependencies between applications, endpoints, servers, network services and industrial systems",
+      "Supported migrations, technical changes, patching and operational validation",
+      "Prepared escalation evidence and coordinated resolution with infrastructure, OT, security and vendor teams",
     ],
   },
   {
@@ -207,10 +207,10 @@ const EXPERIENCE = [
     company: "Auxilion",
     location: "Dublin, Ireland · Hybrid",
     bullets: [
-      "L2 IT support for Teagasc (~3,000 users across research centres and colleges in Ireland)",
-      "Resolved M365, authentication, email, Teams and SharePoint incidents",
-      "Managed escalated cases requiring analysis, documentation and follow-up",
-      "Contributed to knowledge base improvements and repeatable support procedures",
+      "Delivered L2 IT support for approximately 3,000 users across research centres, offices and colleges",
+      "Resolved Microsoft 365, Windows, authentication, email, Teams, SharePoint and OneDrive incidents",
+      "Managed escalated cases through analysis, resolution, follow-up and user communication",
+      "Documented findings and escalation evidence within structured ITSM workflows",
     ],
   },
   {
@@ -219,33 +219,33 @@ const EXPERIENCE = [
     company: "Communisis",
     location: "Liverpool, UK · On-site",
     bullets: [
-      "Supported corporate IT operations with endpoint security, access-control processes and patching",
-      "Troubleshot endpoint protection and security-related incidents",
-      "Contributed to patching, secure operations and support continuity",
+      "Investigated Windows, application, access and configuration incidents across corporate endpoints",
+      "Supported patching, endpoint hardening and policy-aligned operational changes",
+      "Collected technical evidence and coordinated escalation with infrastructure and security teams",
     ],
   },
   {
     period: "2002 — 2020",
-    title: "IT Support & Computer Repair Business Owner",
+    title: "IT Services Business Owner / Technical Lead",
     company: "BEEP Informática",
-    location: "On-site",
+    location: "Málaga, Spain · On-site",
     bullets: [
-      "Owned and operated a computer repair and IT support business for 18 years",
-      "Diagnosed Windows, hardware, software, driver and connectivity issues",
-      "Supported printers, backups, antivirus tools and small-business IT",
+      "Led day-to-day technical operations and coordinated a small support team",
+      "Delivered Windows, software, hardware, printer, network and connectivity support",
+      "Managed customer priorities, suppliers, service expectations and technical follow-up",
     ],
   },
 ];
 
 const CERTIFICATIONS = [
-  { name: "Microsoft Security Essentials Professional Certificate", issuer: "Microsoft & LinkedIn", year: "2025", latest: true },
-  { name: "Proofpoint Certified AI Email Security Specialist", issuer: "Proofpoint", year: "2026", latest: true },
-  { name: "AWS Cloud Solutions Architect", issuer: "Amazon Web Services", year: "2024" },
-  { name: "Google Cybersecurity", issuer: "Google", year: "2023" },
-  { name: "Google IT Support", issuer: "Google", year: "2021" },
-  { name: "Applied DevOps Engineering", issuer: "IBM", year: "2024" },
-  { name: "Azure Database Administrator — DP-300 HA/DR", issuer: "LinkedIn Learning", year: "2025" },
-  { name: "Google Project Management", issuer: "Google", year: "2021" },
+  { name: "Proofpoint Certified AI Data Security Specialist 2026", issuer: "Proofpoint", year: "2026", latest: true },
+  { name: "Proofpoint Certified AI Email Security Specialist 2026", issuer: "Proofpoint", year: "2026", latest: true },
+  { name: "Proofpoint Certified AI Agent Security Specialist 2026", issuer: "Proofpoint", year: "2026", latest: true },
+  { name: "Microsoft Security Essentials Professional Certificate", issuer: "Microsoft & LinkedIn", year: "2025" },
+  { name: "AWS Cloud Solutions Architect Professional Certificate", issuer: "AWS", year: "2024" },
+  { name: "AWS Cloud Technology Consultant Professional Certificate", issuer: "AWS", year: "2024" },
+  { name: "IBM DevOps and Software Engineering", issuer: "IBM", year: "2024" },
+  { name: "IBM Cybersecurity Analyst", issuer: "IBM", year: "2024" },
 ];
 
 const PRINCIPLES = [
@@ -451,7 +451,7 @@ export default function Home() {
   onClick={() => scrollTo("#contact")}
   className="ml-4 inline-flex h-12 min-w-[10rem] items-center justify-center whitespace-nowrap bg-charcoal px-5 text-xs font-bold uppercase tracking-[0.12em] text-white hover:bg-black transition-all duration-300 btn-press"
 >
-  Get Help Today
+  View Experience
 </button>
             </div>
 
@@ -519,10 +519,10 @@ export default function Home() {
               {/* Name - large serif, word-by-word reveal */}
               <h1 className="font-serif text-[3.5rem] sm:text-[4.5rem] md:text-[5.4rem] lg:text-[6.1rem] xl:text-[6.4rem] font-semibold text-charcoal leading-[0.92] tracking-[-0.02em] mb-7">
   <span className="block">
-    <HeroAnimatedLine text="Let's Get IT" delay={0.5} />
+    <HeroAnimatedLine text="Application Support" delay={0.5} />
   </span>
   <span className="block mt-1 sm:mt-2">
-    <HeroAnimatedLine text="Under Control" delay={0.78} />
+    <HeroAnimatedLine text="& IT Operations" delay={0.78} />
   </span>
 </h1>
 
@@ -533,7 +533,7 @@ export default function Home() {
   transition={{ duration: 0.9, delay: 1.2, ease: EASE_OUT }}
   className="text-[0.82rem] sm:text-[0.88rem] md:text-[0.96rem] font-semibold uppercase tracking-[0.28em] text-charcoal/72 mb-10"
 >
-  Practical support for business systems
+  L2 SUPPORT · EVIDENCE · AUTOMATION
 </motion.p>
 
               {/* CTA - delayed fade */}
@@ -543,10 +543,10 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 1.8, ease: EASE_OUT }}
               >
                 <button
-                  onClick={() => scrollTo("#contact")}
+                  onClick={() => scrollTo("#experience")}
                   className="btn-primary btn-press"
                 >
-                  Get Help Today
+                  View Experience
                 </button>
               </motion.div>
             </div>
@@ -574,18 +574,18 @@ export default function Home() {
         <section id="services" className="py-32 md:py-40 bg-white">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <Reveal>
-              <p className="section-label mb-4">Services</p>
+              <p className="section-label mb-4">Capabilities</p>
             </Reveal>
             <Reveal delay={0.1}>
               <h2 className="section-heading text-3xl md:text-4xl lg:text-5xl text-charcoal mb-4 max-w-3xl">
-                When IT support gets stuck, I unblock it
+                Application support, operations and automation
               </h2>
             </Reveal>
             <Reveal delay={0.2}>
               <p className="text-mid-gray text-base md:text-lg max-w-2xl mb-20 leading-relaxed">
-                Microsoft 365, Entra ID, endpoint and application issues
-                that need structured diagnostics, clear documentation and
-                repeatable support workflows.
+                L2 troubleshooting across applications, identity, endpoints
+                and infrastructure, strengthened by structured evidence,
+                clear escalation and practical automation.
               </p>
             </Reveal>
 
@@ -841,20 +841,20 @@ export default function Home() {
                 <Reveal delay={0.05}>
                   <p className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-emerald-400/80 mb-6">
                     <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    Available for remote roles &amp; B2B support contracts
+                    Open to remote roles &amp; B2B contracts
                   </p>
                 </Reveal>
                 <Reveal delay={0.1}>
                   <h2 className="section-heading text-3xl md:text-4xl lg:text-5xl text-white mb-6">
-                    Need help with Microsoft 365, Entra ID or IT operations?
+                    Let's talk about Application Support &amp; IT Operations
                   </h2>
                 </Reveal>
                 <Reveal delay={0.2}>
                   <p className="text-white/50 text-base leading-relaxed mb-10">
-                    Send the symptoms. I will help you structure the next
-                    checks. Include what is failing, who is affected, when it
-                    started, what changed recently and any screenshots or error
-                    messages you have.
+                    I am open to Application Support, Production Support,
+                    Technical Support and IT Operations opportunities. Full-time
+                    and contract work are both welcome, with B2B delivery available
+                    through Webify Digital Solutions Ltd when appropriate.
                   </p>
                 </Reveal>
                 <Reveal delay={0.3}>
@@ -944,7 +944,7 @@ export default function Home() {
                   <div>
                     <textarea
                       name="message"
-                      placeholder="Describe the issue or how I can help"
+                      placeholder="Role, project or support requirement"
                       required
                       minLength={20}
                       maxLength={3000}
@@ -1018,8 +1018,7 @@ export default function Home() {
       <footer className="bg-charcoal py-8">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/40 text-xs tracking-wide">
-            &copy; {new Date().getFullYear()} Rafael Alba &middot; Microsoft 365,
-            Entra ID &amp; IT Operations Support
+            &copy; {new Date().getFullYear()} Rafael Alba &middot; Application Support &amp; IT Operations Engineer
           </p>
         </div>
       </footer>
