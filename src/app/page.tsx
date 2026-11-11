@@ -728,7 +728,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.1}>
               <h2 className="section-heading text-3xl md:text-4xl lg:text-5xl text-charcoal mb-20 max-w-3xl">
-                From the service desk to production support
+                Enterprise support, infrastructure and production IT
               </h2>
             </Reveal>
 
@@ -785,8 +785,8 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.15}>
               <p className="text-mid-gray text-base md:text-lg max-w-2xl mb-20 leading-relaxed">
-                A curated selection of certifications that reflect my focus on
-                IT operations, security awareness and practical automation.
+                A curated selection of professional certificates supporting
+                IT operations, cloud skills and practical automation.
               </p>
             </Reveal>
 
@@ -848,7 +848,7 @@ export default function Home() {
                 </Reveal>
                 <Reveal delay={0.1}>
                   <h2 className="section-heading text-3xl md:text-4xl lg:text-5xl text-white mb-6">
-                    Let's talk about Application Support &amp; IT Operations
+                    Let's talk about IT Operations &amp; Application Support
                   </h2>
                 </Reveal>
                 <Reveal delay={0.2}>
