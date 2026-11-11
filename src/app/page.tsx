@@ -239,7 +239,7 @@ const EXPERIENCE = [
   },
 ];
 
-const CERTIFICATIONS = [
+const CERTIFICATIONS: { name: string; issuer: string; year: string; latest?: boolean }[] = [
   { name: "IBM AI Developer Professional Certificate", issuer: "IBM", year: "2024" },
   { name: "Proofpoint Certified AI Data Security Specialist 2026", issuer: "Proofpoint", year: "2026" },
   { name: "Microsoft Security Essentials Professional Certificate", issuer: "Microsoft & LinkedIn", year: "2025" },
