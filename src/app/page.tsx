@@ -550,6 +550,12 @@ export default function Home() {
                 >
                   View Experience
                 </button>
+                <button
+                  onClick={() => scrollTo("#projects")}
+                  className="ml-4 mt-3 sm:mt-0 inline-flex items-center justify-center text-sm font-semibold text-charcoal underline underline-offset-4 hover:text-navy"
+                >
+                  Explore projects
+                </button>
               </motion.div>
             </div>
           </div>
