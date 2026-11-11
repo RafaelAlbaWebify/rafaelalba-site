@@ -48,8 +48,10 @@ jobs:
       - run: npm run build -- --webpack
       - name: Install Playwright browser tooling
         run: |
-          npm install --no-save --package-lock=false playwright@1.56.1
-          npx playwright install chromium
+          mkdir -p /tmp/portfolio-playwright
+          cd /tmp/portfolio-playwright
+          npm install --no-save --no-package-lock playwright@1.56.1
+          ./node_modules/.bin/playwright install chromium
       - name: Capture desktop and mobile screenshots
         run: |
           mkdir -p screenshots
@@ -57,7 +59,7 @@ jobs:
           SERVER_PID=$!
           trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
           for i in 1 2 3 4 5; do curl -fsS http://localhost:4000/ >/dev/null && break || sleep 1; done
-          node scripts/visual-qa.cjs
+          NODE_PATH=/tmp/portfolio-playwright/node_modules node scripts/visual-qa.cjs
       - uses: actions/upload-artifact@v4
         with:
           name: portfolio-screenshots
