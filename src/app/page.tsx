@@ -240,14 +240,14 @@ const EXPERIENCE = [
 ];
 
 const CERTIFICATIONS = [
-  { name: "Proofpoint Certified AI Data Security Specialist 2026", issuer: "Proofpoint", year: "2026", latest: true },
-  { name: "Proofpoint Certified AI Email Security Specialist 2026", issuer: "Proofpoint", year: "2026", latest: true },
-  { name: "Proofpoint Certified AI Agent Security Specialist 2026", issuer: "Proofpoint", year: "2026", latest: true },
+  { name: "IBM AI Developer Professional Certificate", issuer: "IBM", year: "2024" },
+  { name: "Proofpoint Certified AI Data Security Specialist 2026", issuer: "Proofpoint", year: "2026" },
   { name: "Microsoft Security Essentials Professional Certificate", issuer: "Microsoft & LinkedIn", year: "2025" },
   { name: "AWS Cloud Solutions Architect Professional Certificate", issuer: "AWS", year: "2024" },
   { name: "AWS Cloud Technology Consultant Professional Certificate", issuer: "AWS", year: "2024" },
   { name: "IBM DevOps and Software Engineering", issuer: "IBM", year: "2024" },
   { name: "IBM Cybersecurity Analyst", issuer: "IBM", year: "2024" },
+  { name: "FORVIA Grow as an Engineering Champion", issuer: "FORVIA", year: "2025" },
 ];
 
 const PRINCIPLES = [
