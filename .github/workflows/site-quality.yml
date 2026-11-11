@@ -1,0 +1,64 @@
+name: Site quality and dependency review
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dependency-audit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Save dependency audit
+        run: npm audit --json > dependency-audit.json || true
+      - name: Summarize findings
+        run: |
+          node - <<'NODE'
+          const audit = require('./dependency-audit.json');
+          console.log('Vulnerability summary:', JSON.stringify(audit.metadata?.vulnerabilities ?? {}));
+          for (const [name, issue] of Object.entries(audit.vulnerabilities ?? {})) {
+            if (issue.severity === 'critical' || issue.severity === 'high') {
+              console.log(name, issue.severity, 'direct:', issue.isDirect, 'fix:', JSON.stringify(issue.fixAvailable));
+            }
+          }
+          NODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dependency-audit
+          path: dependency-audit.json
+
+  visual-smoke:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build -- --webpack
+      - name: Install Playwright browser tooling
+        run: |
+          npm install --no-save --package-lock=false playwright@1.56.1
+          npx playwright install chromium
+      - name: Capture desktop and mobile screenshots
+        run: |
+          mkdir -p screenshots
+          python3 -m http.server 4000 --directory out > /tmp/portfolio-http.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          for i in 1 2 3 4 5; do curl -fsS http://localhost:4000/ >/dev/null && break || sleep 1; done
+          node scripts/visual-qa.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-screenshots
+          path: screenshots/

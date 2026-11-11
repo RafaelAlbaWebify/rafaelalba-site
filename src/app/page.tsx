@@ -266,6 +266,7 @@ export default function Home() {
   const web3FormsAccessKey = "e0917076-7178-47eb-8861-c175d4682381";
   const web3FormsEndpoint = "https://api.web3forms.com/submit";
   const [formState, setFormState] = useState({ name: "", email: "", message: "" });
+  const [honeypot, setHoneypot] = useState("");
   const [formErrors, setFormErrors] = useState<{ name?: string; email?: string; message?: string }>({});
   const [formFeedback, setFormFeedback] = useState("");
   const [preparedMailtoLink, setPreparedMailtoLink] = useState("");
@@ -347,7 +348,7 @@ export default function Home() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (formSubmitting) {
+    if (formSubmitting || honeypot) {
       return;
     }
 
@@ -380,7 +381,7 @@ export default function Home() {
           email,
           replyto: email,
           message,
-          botcheck: "",
+          botcheck: honeypot,
         }),
       });
 
@@ -397,6 +398,7 @@ export default function Home() {
       }
 
       setFormState({ name: "", email: "", message: "" });
+      setHoneypot("");
       setFormErrors({});
       setPreparedMailtoLink("");
       setFormFeedback("Message sent. Thank you - I will reply as soon as possible.");
@@ -904,11 +906,17 @@ export default function Home() {
                   onSubmit={handleSubmit}
                   noValidate
                   className="glass-card p-8 md:p-10 space-y-8"
+                  aria-label="Contact Rafael Alba"
                 >
+                  <div className="hidden" aria-hidden="true">
+                    <label htmlFor="website-company">Leave this field empty</label>
+                    <input id="website-company" name="botcheck" type="text" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} />
+                  </div>
                   <div>
                     <input
                       type="text"
                       name="name"
+                      aria-label="Your name"
                       placeholder="Your name"
                       required
                       minLength={2}
@@ -931,6 +939,7 @@ export default function Home() {
                     <input
                       type="email"
                       name="email"
+                      aria-label="Your email"
                       placeholder="Your email"
                       required
                       maxLength={120}
@@ -952,6 +961,7 @@ export default function Home() {
                   <div>
                     <textarea
                       name="message"
+                      aria-label="Role, project or support requirement"
                       placeholder="Role, project or support requirement"
                       required
                       minLength={20}
@@ -989,7 +999,7 @@ export default function Home() {
                           exit={{ opacity: 0 }}
                           className="space-y-2"
                         >
-                          <p className="text-white/60 text-sm leading-relaxed">
+                          <p role="status" aria-live="polite" className="text-white/60 text-sm leading-relaxed">
                             {formFeedback}
                           </p>
                           {preparedMailtoLink && (
