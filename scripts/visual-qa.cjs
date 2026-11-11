@@ -27,7 +27,22 @@ async function capture(browser, name, viewport, baseUrl) {
   }));
 
   await page.screenshot({ path: `screenshots/${name}.png`, fullPage: true, animations: "disabled" });
-  console.log(name, JSON.stringify({ ...metrics, pageErrors: errors }));
+  // Intercept the provider request: exercise the form without sending real email.
+  let submitted = null;
+  await page.route("https://api.web3forms.com/submit", async (route) => {
+    submitted = route.request().postDataJSON();
+    await route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({ success: true }) });
+  });
+  await page.getByRole("textbox", { name: "Your name" }).fill("Portfolio QA");
+  await page.getByRole("textbox", { name: "Your email" }).fill("qa@example.com");
+  await page.getByRole("textbox", { name: "Role, project or support requirement" }).fill("Automated smoke test of the contact form.");
+  await page.getByRole("button", { name: "Send message" }).click();
+  await page.getByRole("status").filter({ hasText: "Message sent" }).waitFor({ timeout: 10000 });
+  if (!submitted || submitted.name !== "Portfolio QA" || submitted.botcheck !== "") {
+    throw new Error(`${name}: contact form payload validation failed`);
+  }
+
+  console.log(name, JSON.stringify({ ...metrics, contactFormMocked: true, pageErrors: errors }));
   await page.close();
 
   if (metrics.documentWidth > metrics.viewportWidth + 2) {
