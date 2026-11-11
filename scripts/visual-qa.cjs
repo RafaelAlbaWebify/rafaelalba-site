@@ -33,6 +33,28 @@ async function capture(browser, name, viewport, baseUrl) {
     submitted = route.request().postDataJSON();
     await route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({ success: true }) });
   });
+  // Validate empty fields before a successful submission; no network request should fire.
+  await page.getByRole("button", { name: "Send message" }).click();
+  await page.locator("#contact-name-error").waitFor();
+  await page.locator("#contact-email-error").waitFor();
+  await page.locator("#contact-message-error").waitFor();
+  // Border color transitions over 200ms; assert the settled error state.
+  await page.waitForTimeout(350);
+  for (const id of ["contact-name", "contact-email", "contact-message"]) {
+    const field = page.locator(`#${id}`);
+    if (await field.getAttribute("aria-invalid") !== "true") {
+      throw new Error(`${name}: ${id} not marked as invalid`);
+    }
+    const color = await field.evaluate((el) => getComputedStyle(el).borderBottomColor);
+    if (color !== "rgb(253, 164, 175)") {
+      throw new Error(`${name}: ${id} has no visible error border: ${color}`);
+    }
+  }
+  if (submitted) throw new Error(`${name}: invalid form was submitted`);
+  if (await page.locator("#contact-name").evaluate((el) => document.activeElement !== el)) {
+    throw new Error(`${name}: first invalid field not focused`);
+  }
+  await page.screenshot({ path: `screenshots/${name}-validation.png`, fullPage: true, animations: "disabled" });
   await page.getByRole("textbox", { name: "Your name" }).fill("Portfolio QA");
   await page.getByRole("textbox", { name: "Your email" }).fill("qa@example.com");
   await page.getByRole("textbox", { name: "Role, project or support requirement" }).fill("Automated smoke test of the contact form.");

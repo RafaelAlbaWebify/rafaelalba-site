@@ -200,6 +200,24 @@ html {
   color: rgba(255, 255, 255, 0.35);
 }
 
+/* Form validation is conveyed through contrast, text and focus, not bolding alone. */
+.glass-card .input-underline[aria-invalid="true"],
+.glass-card .input-underline[aria-invalid="true"]:focus {
+  border-bottom: 2px solid #FDA4AF !important;
+  background-color: rgba(244, 63, 94, 0.10) !important;
+}
+.input-underline[aria-invalid="true"]::placeholder {
+  color: #FECDD3;
+}
+.input-underline:focus-visible {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 4px;
+}
+.input-underline[aria-invalid="true"]:focus-visible {
+  outline-color: #FDA4AF;
+}
+
+
 
 .glass-card {
   background: rgba(255, 255, 255, 0.06);

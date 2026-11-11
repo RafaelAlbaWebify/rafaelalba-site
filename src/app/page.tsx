@@ -271,6 +271,9 @@ export default function Home() {
   const [formFeedback, setFormFeedback] = useState("");
   const [preparedMailtoLink, setPreparedMailtoLink] = useState("");
   const [formSubmitting, setFormSubmitting] = useState(false);
+  const nameInputRef = useRef<HTMLInputElement>(null);
+  const emailInputRef = useRef<HTMLInputElement>(null);
+  const messageInputRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -316,6 +319,11 @@ export default function Home() {
     }
 
     setFormErrors(errors);
+    if (Object.keys(errors).length > 0) {
+      if (errors.name) nameInputRef.current?.focus();
+      else if (errors.email) emailInputRef.current?.focus();
+      else if (errors.message) messageInputRef.current?.focus();
+    }
     return Object.keys(errors).length === 0;
   };
 
@@ -353,7 +361,7 @@ export default function Home() {
     }
 
     if (!validateContactForm()) {
-      setFormFeedback("Please correct the highlighted fields before sending.");
+      setFormFeedback("Please correct the errors shown below each field.");
       return;
     }
 
@@ -916,6 +924,9 @@ export default function Home() {
                     <input
                       type="text"
                       name="name"
+                      ref={nameInputRef}
+                      id="contact-name"
+                      aria-describedby={formErrors.name ? "contact-name-error" : undefined}
                       aria-label="Your name"
                       placeholder="Your name"
                       required
@@ -925,13 +936,13 @@ export default function Home() {
                       value={formState.name}
                       onChange={(e) => {
                         setFormState({ ...formState, name: e.target.value });
-                        if (formErrors.name) setFormErrors({ ...formErrors, name: undefined });
+                        if (formErrors.name && e.target.value.trim().length >= 2) setFormErrors({ ...formErrors, name: undefined });
                       }}
                       aria-invalid={Boolean(formErrors.name)}
                       className="input-underline w-full"
                     />
                     {formErrors.name && (
-                      <p className="mt-2 text-xs text-red-300">{formErrors.name}</p>
+                      <p id="contact-name-error" role="alert" className="mt-2 text-sm font-semibold text-rose-300">{formErrors.name}</p>
                     )}
                   </div>
 
@@ -939,6 +950,9 @@ export default function Home() {
                     <input
                       type="email"
                       name="email"
+                      ref={emailInputRef}
+                      id="contact-email"
+                      aria-describedby={formErrors.email ? "contact-email-error" : undefined}
                       aria-label="Your email"
                       placeholder="Your email"
                       required
@@ -948,19 +962,22 @@ export default function Home() {
                       value={formState.email}
                       onChange={(e) => {
                         setFormState({ ...formState, email: e.target.value });
-                        if (formErrors.email) setFormErrors({ ...formErrors, email: undefined });
+                        if (formErrors.email && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e.target.value.trim())) setFormErrors({ ...formErrors, email: undefined });
                       }}
                       aria-invalid={Boolean(formErrors.email)}
                       className="input-underline w-full"
                     />
                     {formErrors.email && (
-                      <p className="mt-2 text-xs text-red-300">{formErrors.email}</p>
+                      <p id="contact-email-error" role="alert" className="mt-2 text-sm font-semibold text-rose-300">{formErrors.email}</p>
                     )}
                   </div>
 
                   <div>
                     <textarea
                       name="message"
+                      ref={messageInputRef}
+                      id="contact-message"
+                      aria-describedby={formErrors.message ? "contact-message-error" : "contact-message-hint"}
                       aria-label="Role, project or support requirement"
                       placeholder="Role, project or support requirement"
                       required
@@ -970,14 +987,16 @@ export default function Home() {
                       value={formState.message}
                       onChange={(e) => {
                         setFormState({ ...formState, message: e.target.value });
-                        if (formErrors.message) setFormErrors({ ...formErrors, message: undefined });
+                        if (formErrors.message && e.target.value.trim().length >= 20) setFormErrors({ ...formErrors, message: undefined });
                       }}
                       aria-invalid={Boolean(formErrors.message)}
                       className="input-underline w-full resize-none"
                     />
-                    <div className="mt-2 flex items-center justify-between gap-3 text-xs text-white/35">
-                      <span>{formErrors.message || "Minimum 20 characters."}</span>
-                      <span>{formState.message.trim().length}/3000</span>
+                    <div className="mt-2 flex items-center justify-between gap-3 text-sm">
+                      <span id={formErrors.message ? "contact-message-error" : "contact-message-hint"} role={formErrors.message ? "alert" : undefined} className={formErrors.message ? "font-semibold text-rose-300" : "text-white/65"}>
+                        {formErrors.message || "Minimum 20 characters."}
+                      </span>
+                      <span className="text-xs text-white/65">{formState.message.trim().length}/3000</span>
                     </div>
                   </div>
 
@@ -999,7 +1018,7 @@ export default function Home() {
                           exit={{ opacity: 0 }}
                           className="space-y-2"
                         >
-                          <p role="status" aria-live="polite" className="text-white/60 text-sm leading-relaxed">
+                          <p role="status" aria-live="polite" className={formFeedback.startsWith("Please correct") || formFeedback.startsWith("The direct form") ? "text-rose-300 text-sm font-semibold leading-relaxed" : "text-white/80 text-sm leading-relaxed"}>
                             {formFeedback}
                           </p>
                           {preparedMailtoLink && (
