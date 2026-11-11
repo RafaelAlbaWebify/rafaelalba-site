@@ -1,0 +1,36 @@
+name: Prune unused syntax highlighter once
+
+on:
+  push:
+    branches: [qa-security-contact-accessibility-2026-11]
+
+permissions:
+  contents: write
+
+jobs:
+  prune:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: qa-security-contact-accessibility-2026-11
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Remove unused syntax highlighting dependency
+        run: npm uninstall react-syntax-highlighter
+      - name: Check production build
+        run: npm run build -- --webpack
+      - name: Save dependency changes
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add package.json package-lock.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Remove unused syntax highlighter and vulnerable transitive packages'
+            git push origin HEAD:qa-security-contact-accessibility-2026-11
+          fi
