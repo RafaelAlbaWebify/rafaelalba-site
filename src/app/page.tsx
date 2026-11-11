@@ -155,7 +155,7 @@ const PROJECTS = [
     title: "TRACE IAM Evidence",
     subtitle: "Identity / Modern Workplace Investigation",
     description:
-      "A local-first, read-only IAM evidence workbench for structuring redacted access-support evidence, evaluating deterministic troubleshooting rules and producing reviewable reports.",
+      "A local-first, read-only IAM workbench for synthetic or redacted access evidence, deterministic troubleshooting and reviewable reports; not a production tenant deployment.",
     tags: ["Python", "FastAPI", "Entra ID", "Conditional Access", "Evidence"],
     url: "https://github.com/RafaelAlbaWebify/trace-iam-evidence",
   },
@@ -163,7 +163,7 @@ const PROJECTS = [
     title: "DNS Audit Tool",
     subtitle: "Infrastructure Support Workflow",
     description:
-      "A PowerShell-based DNS auditing tool with a WPF GUI for fast detection of inconsistent records, patterns that need review, and CSV reporting for operational validation.",
+      "A public-safe PowerShell DNS auditing tool inspired by real production troubleshooting, identifying inconsistent records and producing structured review evidence.",
     tags: ["PowerShell", "WPF", "DNS", "Infrastructure"],
     url: "https://github.com/RafaelAlbaWebify/dns-audit-tool",
   },
@@ -585,9 +585,9 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="text-mid-gray text-base md:text-lg max-w-2xl mb-20 leading-relaxed">
-                L2 troubleshooting across applications, identity, endpoints
-                and infrastructure, strengthened by structured evidence,
-                clear escalation and practical automation.
+                20+ years in enterprise IT, infrastructure administration and
+                production-critical support across Spain, Ireland and the UK.
+                Structured diagnostics, Microsoft 365 and practical automation.
               </p>
             </Reveal>
 
