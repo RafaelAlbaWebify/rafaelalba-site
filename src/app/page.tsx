@@ -962,7 +962,7 @@ export default function Home() {
                       value={formState.email}
                       onChange={(e) => {
                         setFormState({ ...formState, email: e.target.value });
-                        if (formErrors.email && /^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/.test(e.target.value.trim())) setFormErrors({ ...formErrors, email: undefined });
+                        if (formErrors.email && /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e.target.value.trim())) setFormErrors({ ...formErrors, email: undefined });
                       }}
                       aria-invalid={Boolean(formErrors.email)}
                       className="input-underline w-full"
