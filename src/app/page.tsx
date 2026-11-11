@@ -184,9 +184,9 @@ const EXPERIENCE = [
     company: "Webify Digital Solutions Ltd",
     location: "Dublin, Ireland · Remote",
     bullets: [
-      "Built support workflows across applications, identity, endpoints and access",
-      "Built PowerShell/Python tooling for troubleshooting, evidence collection and repeatable IT workflows",
-      "Developed M365, Entra, Intune, Azure/AWS and AI-assisted operational scenarios with clear safety boundaries",
+      "Developed PowerShell and Python tooling for infrastructure diagnostics, application support and automation",
+      "Built TRACE, INFIOS, OPSCORE and WATCH as reproducible, documented technical portfolio projects",
+      "Explored Microsoft Graph, M365, Entra, Intune, Azure/AWS and AI-assisted workflows with public-safe example data",
     ],
   },
   {
@@ -217,24 +217,24 @@ const EXPERIENCE = [
   },
   {
     period: "2020 — 2022",
-    title: "IT Support — Endpoint & Access Operations",
+    title: "IT Support Technician | On-site Helpdesk (L1)",
     company: "Communisis",
     location: "Liverpool, UK · On-site",
     bullets: [
-      "Investigated Windows, application, access and configuration incidents across corporate endpoints",
-      "Supported patching, endpoint hardening and policy-aligned operational changes",
-      "Collected technical evidence and coordinated escalation with infrastructure and security teams",
+      "Provided on-site L1 helpdesk at an industrial printing plant, resolving Windows, printer, application, access and connectivity incidents",
+      "Supported on-site employees and production operations with workstation setup, patching and device troubleshooting",
+      "Documented troubleshooting and escalated specialist infrastructure and security issues",
     ],
   },
   {
     period: "2002 — 2020",
-    title: "IT Services Business Owner / Technical Lead",
+    title: "Owner & Technical Lead",
     company: "BEEP Informática",
     location: "Málaga, Spain · On-site",
     bullets: [
-      "Led day-to-day technical operations and coordinated a small support team",
-      "Delivered Windows, software, hardware, printer, network and connectivity support",
-      "Managed customer priorities, suppliers, service expectations and technical follow-up",
+      "Founded and ran an IT services business for 18 years, managing a small technical team",
+      "Provided multi-client Windows/server, networking, hardware, software and backup support",
+      "Owned customer issues end-to-end, including migrations, vendor coordination and service follow-up",
     ],
   },
 ];
