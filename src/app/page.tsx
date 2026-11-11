@@ -448,7 +448,7 @@ export default function Home() {
                 </button>
               ))}
               <button
-  onClick={() => scrollTo("#contact")}
+  onClick={() => scrollTo("#experience")}
   className="ml-4 inline-flex h-12 min-w-[10rem] items-center justify-center whitespace-nowrap bg-charcoal px-5 text-xs font-bold uppercase tracking-[0.12em] text-white hover:bg-black transition-all duration-300 btn-press"
 >
   View Experience
