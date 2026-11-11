@@ -936,7 +936,7 @@ export default function Home() {
                       value={formState.name}
                       onChange={(e) => {
                         setFormState({ ...formState, name: e.target.value });
-                        if (formErrors.name) setFormErrors({ ...formErrors, name: undefined });
+                        if (formErrors.name && e.target.value.trim().length >= 2) setFormErrors({ ...formErrors, name: undefined });
                       }}
                       aria-invalid={Boolean(formErrors.name)}
                       className="input-underline w-full"
@@ -962,7 +962,7 @@ export default function Home() {
                       value={formState.email}
                       onChange={(e) => {
                         setFormState({ ...formState, email: e.target.value });
-                        if (formErrors.email) setFormErrors({ ...formErrors, email: undefined });
+                        if (formErrors.email && /^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/.test(e.target.value.trim())) setFormErrors({ ...formErrors, email: undefined });
                       }}
                       aria-invalid={Boolean(formErrors.email)}
                       className="input-underline w-full"
@@ -987,7 +987,7 @@ export default function Home() {
                       value={formState.message}
                       onChange={(e) => {
                         setFormState({ ...formState, message: e.target.value });
-                        if (formErrors.message) setFormErrors({ ...formErrors, message: undefined });
+                        if (formErrors.message && e.target.value.trim().length >= 20) setFormErrors({ ...formErrors, message: undefined });
                       }}
                       aria-invalid={Boolean(formErrors.message)}
                       className="input-underline w-full resize-none"
