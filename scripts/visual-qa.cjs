@@ -38,6 +38,8 @@ async function capture(browser, name, viewport, baseUrl) {
   await page.locator("#contact-name-error").waitFor();
   await page.locator("#contact-email-error").waitFor();
   await page.locator("#contact-message-error").waitFor();
+  // Border color transitions over 200ms; assert the settled error state.
+  await page.waitForTimeout(350);
   for (const id of ["contact-name", "contact-email", "contact-message"]) {
     const field = page.locator(`#${id}`);
     if (await field.getAttribute("aria-invalid") !== "true") {
