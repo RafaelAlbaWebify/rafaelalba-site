@@ -521,10 +521,10 @@ export default function Home() {
               {/* Name - large serif, word-by-word reveal */}
               <h1 className="font-serif text-[3.5rem] sm:text-[4.5rem] md:text-[5.4rem] lg:text-[6.1rem] xl:text-[6.4rem] font-semibold text-charcoal leading-[0.92] tracking-[-0.02em] mb-7">
   <span className="block">
-    <HeroAnimatedLine text="Application Support" delay={0.5} />
+    <HeroAnimatedLine text="IT Operations" delay={0.5} />
   </span>
   <span className="block mt-1 sm:mt-2">
-    <HeroAnimatedLine text="& IT Operations" delay={0.78} />
+    <HeroAnimatedLine text="& Application Support" delay={0.78} />
   </span>
 </h1>
 
@@ -535,7 +535,7 @@ export default function Home() {
   transition={{ duration: 0.9, delay: 1.2, ease: EASE_OUT }}
   className="text-[0.82rem] sm:text-[0.88rem] md:text-[0.96rem] font-semibold uppercase tracking-[0.28em] text-charcoal/72 mb-10"
 >
-  L2 SUPPORT · EVIDENCE · AUTOMATION
+  INFRASTRUCTURE · MICROSOFT 365 · AUTOMATION
 </motion.p>
 
               {/* CTA - delayed fade */}
