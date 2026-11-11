@@ -201,10 +201,10 @@ html {
 }
 
 /* Form validation is conveyed through contrast, text and focus, not bolding alone. */
-.input-underline[aria-invalid="true"],
-.input-underline[aria-invalid="true"]:focus {
-  border-bottom: 2px solid #FDA4AF;
-  background: rgba(244, 63, 94, 0.06);
+.glass-card .input-underline[aria-invalid="true"],
+.glass-card .input-underline[aria-invalid="true"]:focus {
+  border-bottom: 2px solid #FDA4AF !important;
+  background-color: rgba(244, 63, 94, 0.10) !important;
 }
 .input-underline[aria-invalid="true"]::placeholder {
   color: #FECDD3;
