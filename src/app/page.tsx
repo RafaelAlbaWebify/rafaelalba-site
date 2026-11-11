@@ -191,14 +191,14 @@ const EXPERIENCE = [
   },
   {
     period: "2025 — 2026",
-    title: "IT Support Engineer | IT Operations",
+    title: "IT Operations Engineer | Manufacturing",
     company: "Quental",
     location: "Vigo, Spain · Hybrid",
     bullets: [
-      "Investigated production-critical incidents across enterprise applications, Windows, identity and DNS",
-      "Diagnosed dependencies between applications, endpoints, servers, network services and industrial systems",
-      "Supported migrations, technical changes, patching and operational validation",
-      "Prepared escalation evidence and coordinated resolution with infrastructure, OT, security and vendor teams",
+      "Administered 2 physical servers and approximately 20 VMware/vSphere VMs at a production-critical automotive plant",
+      "Managed hybrid Commvault backup operations and investigated production application, DNS and OT/IT dependencies",
+      "Planned and tested server and physical tape-library migrations; configured Entra ID and Intune enrolment",
+      "Built a DNS audit resolving a long-standing issue; investigated SQL/OPC/PLC incidents with OT and suppliers; contributed to an international RFID pilot",
     ],
   },
   {
