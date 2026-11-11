@@ -155,7 +155,7 @@ const PROJECTS = [
     title: "TRACE IAM Evidence",
     subtitle: "Identity / Modern Workplace Investigation",
     description:
-      "A local-first, read-only IAM evidence workbench for structuring redacted access-support evidence, evaluating deterministic troubleshooting rules and producing reviewable reports.",
+      "A local-first, read-only IAM workbench for synthetic or redacted access evidence, deterministic troubleshooting and reviewable reports; not a production tenant deployment.",
     tags: ["Python", "FastAPI", "Entra ID", "Conditional Access", "Evidence"],
     url: "https://github.com/RafaelAlbaWebify/trace-iam-evidence",
   },
@@ -163,7 +163,7 @@ const PROJECTS = [
     title: "DNS Audit Tool",
     subtitle: "Infrastructure Support Workflow",
     description:
-      "A PowerShell-based DNS auditing tool with a WPF GUI for fast detection of inconsistent records, patterns that need review, and CSV reporting for operational validation.",
+      "A public-safe PowerShell DNS auditing tool inspired by real production troubleshooting, identifying inconsistent records and producing structured review evidence.",
     tags: ["PowerShell", "WPF", "DNS", "Infrastructure"],
     url: "https://github.com/RafaelAlbaWebify/dns-audit-tool",
   },
@@ -184,68 +184,70 @@ const EXPERIENCE = [
     company: "Webify Digital Solutions Ltd",
     location: "Dublin, Ireland · Remote",
     bullets: [
-      "Built support workflows across applications, identity, endpoints and access",
-      "Built PowerShell/Python tooling for troubleshooting, evidence collection and repeatable IT workflows",
-      "Developed M365, Entra, Intune, Azure/AWS and AI-assisted operational scenarios with clear safety boundaries",
+      "Developed PowerShell and Python tooling for infrastructure diagnostics, application support and automation",
+      "Built TRACE, INFIOS, OPSCORE and WATCH as reproducible, documented technical portfolio projects",
+      "Explored Microsoft Graph, M365, Entra, Intune, Azure/AWS and AI-assisted workflows with public-safe example data",
     ],
   },
   {
     period: "2025 — 2026",
-    title: "IT Support Engineer | IT Operations",
-    company: "Quental",
+    title: "IT Operations Engineer | Manufacturing",
+    company: "Quental · FORVIA Asientos de Galicia",
     location: "Vigo, Spain · Hybrid",
     bullets: [
-      "Investigated production-critical incidents across enterprise applications, Windows, identity and DNS",
-      "Diagnosed dependencies between applications, endpoints, servers, network services and industrial systems",
-      "Supported migrations, technical changes, patching and operational validation",
-      "Prepared escalation evidence and coordinated resolution with infrastructure, OT, security and vendor teams",
+      "Administered 2 physical servers and approximately 20 VMware/vSphere VMs at a production-critical automotive plant",
+      "Managed hybrid Commvault backup operations and investigated production application, DNS and OT/IT dependencies",
+      "Planned and tested server and physical tape-library migrations; configured Entra ID and Intune enrolment",
+      "Built a PowerShell DNS audit resolving an eight-year-old issue; investigated SQL/OPC/PLC clock-synchronisation problems with OT and suppliers",
+      "Tested an international RFID pilot and revised approximately 15–20% of corporate deployment procedures",
+      "Created and consolidated the plant IT asset inventory, including complete physical verification",
     ],
   },
   {
     period: "2022 — 2024",
-    title: "IT Service Desk Engineer",
-    company: "Auxilion",
+    title: "IT Support Engineer | Tier 2",
+    company: "Auxilion · Teagasc account",
     location: "Dublin, Ireland · Hybrid",
     bullets: [
-      "Delivered L2 IT support for approximately 3,000 users across research centres, offices and colleges",
-      "Resolved Microsoft 365, Windows, authentication, email, Teams, SharePoint and OneDrive incidents",
-      "Managed escalated cases through analysis, resolution, follow-up and user communication",
+      "Delivered Tier 2 support for approximately 3,000 users at Teagasc, Ireland's national Agriculture and Food Development Authority",
+      "Administered and troubleshot Microsoft 365, Exchange Online, Teams, Windows, identity and enterprise applications",
+      "Participated in Skype for Business to Teams migration; managed escalated incidents end to end within ITSM/SLA processes",
       "Documented findings and escalation evidence within structured ITSM workflows",
     ],
   },
   {
     period: "2020 — 2022",
-    title: "IT Support — Endpoint & Access Operations",
+    title: "IT Support Technician | On-site Helpdesk (L1)",
     company: "Communisis",
     location: "Liverpool, UK · On-site",
     bullets: [
-      "Investigated Windows, application, access and configuration incidents across corporate endpoints",
-      "Supported patching, endpoint hardening and policy-aligned operational changes",
-      "Collected technical evidence and coordinated escalation with infrastructure and security teams",
+      "Provided on-site L1 helpdesk at an industrial printing plant, resolving Windows, printer, application, access and connectivity incidents",
+      "Supported on-site employees and production operations with workstation setup, patching and device troubleshooting",
+      "Documented troubleshooting and escalated specialist infrastructure and security issues",
     ],
   },
   {
     period: "2002 — 2020",
-    title: "IT Services Business Owner / Technical Lead",
+    title: "Owner & Technical Lead",
     company: "BEEP Informática",
     location: "Málaga, Spain · On-site",
     bullets: [
-      "Led day-to-day technical operations and coordinated a small support team",
-      "Delivered Windows, software, hardware, printer, network and connectivity support",
-      "Managed customer priorities, suppliers, service expectations and technical follow-up",
+      "Founded and ran an IT services business for 18 years, managing a small technical team",
+      "Provided multi-client Windows/server, networking, hardware, software and backup support",
+      "Owned customer issues end-to-end, including migrations, vendor coordination and service follow-up",
     ],
   },
 ];
 
-const CERTIFICATIONS = [
-  { name: "Proofpoint Certified AI Data Security Specialist 2026", issuer: "Proofpoint", year: "2026", latest: true },
-  { name: "Proofpoint Certified AI Email Security Specialist 2026", issuer: "Proofpoint", year: "2026", latest: true },
-  { name: "Proofpoint Certified AI Agent Security Specialist 2026", issuer: "Proofpoint", year: "2026", latest: true },
+const CERTIFICATIONS: { name: string; issuer: string; year: string; latest?: boolean }[] = [
+  { name: "IBM AI Developer Professional Certificate", issuer: "IBM", year: "2024" },
+  { name: "Proofpoint Certified AI Data Security Specialist 2026", issuer: "Proofpoint", year: "2026" },
   { name: "Microsoft Security Essentials Professional Certificate", issuer: "Microsoft & LinkedIn", year: "2025" },
   { name: "AWS Cloud Solutions Architect Professional Certificate", issuer: "AWS", year: "2024" },
   { name: "AWS Cloud Technology Consultant Professional Certificate", issuer: "AWS", year: "2024" },
   { name: "IBM DevOps and Software Engineering", issuer: "IBM", year: "2024" },
   { name: "IBM Cybersecurity Analyst", issuer: "IBM", year: "2024" },
+  { name: "FORVIA Grow as an Engineering Champion", issuer: "FORVIA", year: "2025" },
 ];
 
 const PRINCIPLES = [
@@ -448,7 +450,7 @@ export default function Home() {
                 </button>
               ))}
               <button
-  onClick={() => scrollTo("#contact")}
+  onClick={() => scrollTo("#experience")}
   className="ml-4 inline-flex h-12 min-w-[10rem] items-center justify-center whitespace-nowrap bg-charcoal px-5 text-xs font-bold uppercase tracking-[0.12em] text-white hover:bg-black transition-all duration-300 btn-press"
 >
   View Experience
@@ -519,10 +521,10 @@ export default function Home() {
               {/* Name - large serif, word-by-word reveal */}
               <h1 className="font-serif text-[3.5rem] sm:text-[4.5rem] md:text-[5.4rem] lg:text-[6.1rem] xl:text-[6.4rem] font-semibold text-charcoal leading-[0.92] tracking-[-0.02em] mb-7">
   <span className="block">
-    <HeroAnimatedLine text="Application Support" delay={0.5} />
+    <HeroAnimatedLine text="IT Operations" delay={0.5} />
   </span>
   <span className="block mt-1 sm:mt-2">
-    <HeroAnimatedLine text="& IT Operations" delay={0.78} />
+    <HeroAnimatedLine text="& Application Support" delay={0.78} />
   </span>
 </h1>
 
@@ -533,7 +535,7 @@ export default function Home() {
   transition={{ duration: 0.9, delay: 1.2, ease: EASE_OUT }}
   className="text-[0.82rem] sm:text-[0.88rem] md:text-[0.96rem] font-semibold uppercase tracking-[0.28em] text-charcoal/72 mb-10"
 >
-  L2 SUPPORT · EVIDENCE · AUTOMATION
+  INFRASTRUCTURE · MICROSOFT 365 · AUTOMATION
 </motion.p>
 
               {/* CTA - delayed fade */}
@@ -547,6 +549,12 @@ export default function Home() {
                   className="btn-primary btn-press"
                 >
                   View Experience
+                </button>
+                <button
+                  onClick={() => scrollTo("#projects")}
+                  className="ml-4 mt-3 sm:mt-0 inline-flex items-center justify-center text-sm font-semibold text-charcoal underline underline-offset-4 hover:text-navy"
+                >
+                  Explore projects
                 </button>
               </motion.div>
             </div>
@@ -583,9 +591,9 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.2}>
               <p className="text-mid-gray text-base md:text-lg max-w-2xl mb-20 leading-relaxed">
-                L2 troubleshooting across applications, identity, endpoints
-                and infrastructure, strengthened by structured evidence,
-                clear escalation and practical automation.
+                20+ years in enterprise IT, infrastructure administration and
+                production-critical support across Spain, Ireland and the UK.
+                Structured diagnostics, Microsoft 365 and practical automation.
               </p>
             </Reveal>
 
@@ -726,7 +734,7 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.1}>
               <h2 className="section-heading text-3xl md:text-4xl lg:text-5xl text-charcoal mb-20 max-w-3xl">
-                From the service desk to production support
+                Enterprise support, infrastructure and production IT
               </h2>
             </Reveal>
 
@@ -783,8 +791,8 @@ export default function Home() {
             </Reveal>
             <Reveal delay={0.15}>
               <p className="text-mid-gray text-base md:text-lg max-w-2xl mb-20 leading-relaxed">
-                A curated selection of certifications that reflect my focus on
-                IT operations, security awareness and practical automation.
+                A curated selection of professional certificates supporting
+                IT operations, cloud skills and practical automation.
               </p>
             </Reveal>
 
@@ -846,7 +854,7 @@ export default function Home() {
                 </Reveal>
                 <Reveal delay={0.1}>
                   <h2 className="section-heading text-3xl md:text-4xl lg:text-5xl text-white mb-6">
-                    Let's talk about Application Support &amp; IT Operations
+                    Let's talk about IT Operations &amp; Application Support
                   </h2>
                 </Reveal>
                 <Reveal delay={0.2}>

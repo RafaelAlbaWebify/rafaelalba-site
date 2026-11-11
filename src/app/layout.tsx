@@ -22,9 +22,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rafael Alba — Application Support & IT Operations Engineer",
+  metadataBase: new URL("https://rafaelalba.com"),
+  alternates: { canonical: "/" },
+  title: "Rafael Alba | IT Operations & Application Support Engineer",
   description:
-    "Application Support and IT Operations Engineer with L2 experience across Microsoft 365, Windows, identity, enterprise applications and infrastructure, complemented by automation, cloud and cybersecurity.",
+    "IT Operations and Application Support Engineer with 20+ years in enterprise IT, VMware infrastructure, Microsoft 365, critical manufacturing systems, PowerShell and Python.",
   keywords: [
     "Rafael Alba",
     "Application Support Engineer",
@@ -38,15 +40,21 @@ export const metadata: Metadata = {
     "Incident Management",
     "PowerShell automation",
     "Python automation",
+    "VMware vSphere",
+    "Infrastructure Support Engineer",
     "Remote IT Operations",
   ],
   authors: [{ name: "Rafael Alba" }],
   openGraph: {
-    title: "Rafael Alba — Application Support & IT Operations Engineer",
+    title: "Rafael Alba | IT Operations & Application Support Engineer",
     description:
-      "L2 Application Support and IT Operations across Microsoft 365, Windows, identity, enterprise applications, infrastructure and practical automation.",
+      "20+ years in IT operations, application support, VMware infrastructure, Microsoft 365 and PowerShell/Python automation.",
+    url: "https://rafaelalba.com",
+    siteName: "Rafael Alba",
+    images: [{ url: "/images/hero-desktop-wide.png", alt: "Rafael Alba professional IT portfolio" }],
     type: "website",
   },
+  twitter: { card: "summary_large_image", title: "Rafael Alba | IT Operations & Application Support Engineer", images: ["/images/hero-desktop-wide.png"] },
 };
 
 export default function RootLayout({

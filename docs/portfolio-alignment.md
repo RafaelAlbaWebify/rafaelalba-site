@@ -8,10 +8,13 @@ This document keeps `rafaelalba.com` aligned with the current professional posit
 
 Primary identity:
 
-> **Application Support & IT Operations Engineer**
+> **IT Operations & Application Support Engineer**
 
 Primary target roles:
 
+- IT Operations Engineer
+- Infrastructure Support Engineer
+- Microsoft 365 Administrator
 - Application Support Engineer
 - Production Support Engineer
 - Technical Support Engineer
@@ -61,7 +64,7 @@ Recruiter-first.
 
 Use:
 
-- Application Support & IT Operations Engineer
+- IT Operations & Application Support Engineer
 - L2 support / evidence / automation
 - CTA toward Experience or Projects
 

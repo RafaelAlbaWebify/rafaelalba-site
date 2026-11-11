@@ -8,14 +8,14 @@ The public brand is **Rafael Alba**. Webify Digital Solutions Ltd is my Irish le
 
 The website should stay aligned with the master CVs, LinkedIn and GitHub portfolio:
 
-- **Core:** Application Support / Production Support / SaaS Support and IT Operations.
+- **Core:** IT Operations / Infrastructure Support / Application Support / Production Support / Microsoft 365.
 - **Supporting:** Automation, Modern Workplace, Cloud and Cybersecurity.
 - **Applied AI:** a transversal capability used in operational tooling and workflows, not an AI Engineer positioning.
 - **Credibility boundary:** portfolio and lab work must not be presented as enterprise production ownership where that experience is not established.
 
 The preferred public title is:
 
-> Application Support & IT Operations Engineer
+> IT Operations & Application Support Engineer
 
 ## Experience narrative
 
@@ -68,7 +68,7 @@ Lead with professional capability and evidence, not SMB sales copy.
 Good:
 
 ```text
-Application Support & IT Operations Engineer
+IT Operations & Application Support Engineer
 L2 support, structured evidence and practical automation.
 ```
 
